@@ -327,3 +327,9 @@ The `.github/workflows/ci.yml` pipeline automates continuous integration:
 
 FatturaFacile is open-source software licensed under the [MIT License](LICENSE).  
 Official project website: [https://fatturafacile.eu/](https://fatturafacile.eu/)
+
+## 16. Disclaimer
+
+This software is provided "as is", without warranty of any kind, express or implied. In no event shall the author or copyright holders be liable for any claim, damages, or other liability arising from, out of, or in connection with the software or the use or other dealings in the software.
+
+This project is intended for informational and development purposes. Anyone deploying, hosting, or integrating this software is solely responsible for verifying its suitability, ensuring data security and system integrity, and maintaining compliance with all applicable laws and regulations (including privacy and data protection standards).
