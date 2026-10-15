@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Extract Tag Version
         id: version
@@ -32,7 +32,7 @@ jobs:
           coverage: none
 
       - name: Cache Composer Dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: src/FatturaFacile/vendor
           key: ${{ runner.os }}-composer-prod-${{ hashFiles('src/FatturaFacile/composer.lock') }}
@@ -44,12 +44,12 @@ jobs:
         run: composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
 
       - name: Cache Node Modules
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: src/FatturaFacile/node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('src/FatturaFacile/package-lock.json') }}
@@ -76,7 +76,7 @@ jobs:
           zip -rq "fatturafacile-${{ steps.version.outputs.VERSION }}.zip" release-build
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           name: FatturaFacile v${{ steps.version.outputs.VERSION }}
           draft: false
