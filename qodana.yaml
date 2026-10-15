@@ -1,0 +1,38 @@
+#-------------------------------------------------------------------------------#
+#             Qodana analysis is configured by qodana.yaml file                 #
+#             https://www.jetbrains.com/help/qodana/qodana.yaml.html            #
+#-------------------------------------------------------------------------------#
+
+#################################################################################
+#               WARNING: Do not store sensitive information in this file,       #
+#                as its contents will be included in the Qodana report.         #
+#################################################################################
+version: "1.0"
+
+# Linter ufficiale per PHP e progetti web
+linter: jetbrains/qodana-php:latest
+
+# Specifica il profilo di ispezione
+profile:
+    name: qodana.recommended
+
+# Esclusioni per cartelle di terze parti, test o build
+exclude:
+    - name: All
+      paths:
+          - vendor/
+          - node_modules/
+          - storage/
+          - public/build/
+
+# Quality gate (soglie di fallimento per la CI/CD)
+failureConditions:
+    severityThresholds:
+        critical: 0
+        high: 0
+        moderate: 5
+        low: 20
+
+    dependencyLicenses:
+        failOnProhibited: true
+        failOnUnknown: false

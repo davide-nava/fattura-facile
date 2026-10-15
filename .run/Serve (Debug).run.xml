@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Serve (Debug)" type="PhpLocalRunConfigurationType" factoryName="PHP Console" script_path="$PROJECT_DIR$/src/FatturaFacile/artisan" working_dir="$PROJECT_DIR$/src/FatturaFacile">
+    <CommandLine parameters="serve --port=8000" />
+    <method v="2" />
+  </configuration>
+</component>

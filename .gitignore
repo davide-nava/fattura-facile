@@ -1,0 +1,52 @@
+# Dependencies & Build
+**/node_modules
+**/vendor
+**/public/build
+**/public/css/filament
+**/public/fonts-manifest.dev.json
+**/public/fonts/filament
+**/public/hot
+**/public/js/filament
+**/public/storage
+
+# Cache & Testing
+**/.phpunit.cache
+**/.phpunit.result.cache
+
+# Laravel Storage & Keys
+**/storage/*.key
+**/storage/pail
+
+# Environment & Credentials
+#**/.env
+**/.env.backup
+**/.env.production
+**/auth.json
+
+# Logs
+**/npm-debug.log
+**/yarn-error.log
+
+# IDEs & Editors / AI Assistant Configs
+**/.phpactor.json
+**/Homestead.json
+**/Homestead.yaml
+/.fleet
+# /.idea
+/.nova
+# /.vscode
+/.zed
+# /.agents
+/.amp
+/.claude
+/.cursor
+/.factory
+/.grok
+/.junie
+/.kiro
+/.pi
+# /.mcp.json
+# /CLAUDE.md
+# /boost.json
+# /opencode.json
+# /opencode.jsonc

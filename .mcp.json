@@ -1,0 +1,32 @@
+{
+  "servers": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "postgres": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://postgres:postgres@localhost:5432/fatturafacile"
+      ]
+    },
+    "git": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mcp-server-git", "."]
+    }
+  },
+	"mcpServers": {
+		"laravel-boost": {
+			"command": "php",
+			"args": [
+				"artisan",
+				"boost:mcp"
+			]
+		}
+	}
+}

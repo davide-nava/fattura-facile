@@ -1,0 +1,75 @@
+name: Feature Request
+description: Propose an idea, new module feature, or localization enhancement for FatturaFacile
+title: "[FEATURE]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature for FatturaFacile! Please describe the use case, business rationale, and proposed implementation below.
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Target Module
+      description: Which ERP module or architectural subsystem will this feature enhance?
+      options:
+        - Tenancy & Multi-Tenant Management
+        - Identity, Authentication & Permissions
+        - Invoicing, Quotes & Credit Notes
+        - Sales Lifecycle (Orders, Delivery Notes)
+        - Purchasing (POs, Goods Receipts, Supplier Invoices)
+        - Inventory Management & Stock Valuation
+        - Double-Entry Accounting & Swiss KMU Chart of Accounts
+        - Payments & Banking (ISO 20022 / QR-bill / Camt.054)
+        - CRM & Lead Pipeline
+        - Document Storage & Archiving
+        - REST API & Third-Party Integrations
+        - Filament Admin Panel & UI Widgets
+        - Developer Tooling & Infrastructure
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement / Business Motivation
+      description: What business challenge or limitation does this feature address?
+      placeholder: Currently, when managing multiple warehouses, users cannot easily...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution & Workflow
+      description: How should this feature work from both a user and technical perspective?
+      placeholder: Introduce a batch stock transfer action with automatic stock movement ledger entries...
+    validations:
+      required: true
+
+  - type: textarea
+    id: compliance
+    attributes:
+      label: Financial, Regulatory & Localization Considerations
+      description: Does this feature affect Swiss localization (QR-bill, Swiss UID, KMU, VAT rates, 5-cent rounding) or double-entry accounting?
+      placeholder: Must comply with Swiss VAT 2024+ rates (8.1% standard, 2.6% reduced, 3.8% accommodation) and post corresponding VAT ledger entries.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What alternative approaches or temporary workarounds have been evaluated?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Implementation & Contribution
+      options:
+        - label: I am willing to submit a Pull Request for this feature following project standards.
+        - label: I can assist with testing and business logic verification.

@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Pint Code Style" type="PhpLocalRunConfigurationType" factoryName="PHP Console" script_path="$PROJECT_DIR$/src/FatturaFacile/vendor/bin/pint" working_dir="$PROJECT_DIR$/src/FatturaFacile">
+    <method v="2" />
+  </configuration>
+</component>

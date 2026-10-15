@@ -1,0 +1,112 @@
+name: Bug Report
+description: Report a bug, broken workflow, or unexpected error in FatturaFacile
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Please provide as much context as possible to help us reproduce and resolve the problem quickly.
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module Affected
+      description: Select the functional ERP module or infrastructure area affected by this bug.
+      options:
+        - Tenancy & Multi-Tenant Scoping
+        - Identity & Access Management (Roles/Permissions)
+        - Invoicing & Credit Notes
+        - Sales (Quotes, Orders, Delivery Notes)
+        - Purchasing (POs, Goods Receipts, Supplier Invoices)
+        - Inventory & Warehouses (Stock Movements, Valuation)
+        - Double-Entry Accounting (KMU Ledger, Journal Entries, Balance)
+        - Payments & Allocations
+        - CRM (Leads, Opportunities, Activities)
+        - Documents & Attachments
+        - Integrations & REST API (v1)
+        - Filament Admin Panel
+        - AutoMigrator & Database Migrations
+        - Docker / Infrastructure / Deployment
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+      placeholder: When attempting to post a journal entry with multiple lines...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed step-by-step instructions to reproduce the issue.
+      placeholder: |
+        1. Log into Filament Admin as tenant admin
+        2. Navigate to 'Accounting' > 'Journal Entries'
+        3. Click 'New Journal Entry'
+        4. Add unbalanced lines and click 'Post'
+        5. See error or unexpected state
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: A clear description of what you expected to happen according to business logic or ERP invariants.
+      placeholder: The transaction should be rejected with an UnbalancedJournalEntryException.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: invariants
+    attributes:
+      label: Invariant or Compliance Impact
+      description: Check any core system invariants impacted by this issue.
+      options:
+        - label: Multi-tenant data isolation boundary violation (data leaked across tenants)
+        - label: Double-entry accounting equilibrium violation (sum(Debit) != sum(Credit))
+        - label: Financial precision or rounding error (floating-point inaccuracy, Swiss 5-cent rounding)
+        - label: Stock ledger imbalance or overselling without negative stock allowance
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Deployment Environment
+      description: How is the application running?
+      options:
+        - Docker Compose Full Stack (dockers/compose.yaml)
+        - Local PHP 8.5 with Docker PostgreSQL / Redis
+        - Cloud SaaS Production Installation
+        - CI / Automated Test Environment
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: system_info
+    attributes:
+      label: System & Version Information
+      description: Include PHP version, PostgreSQL version, browser, and OS if relevant.
+      value: |
+        - PHP Version: 8.5
+        - Laravel Version: 13.x
+        - Database: PostgreSQL 16+
+        - Browser / OS: 
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs or Stack Traces
+      description: Paste any relevant logs from `storage/logs/laravel.log` or browser console.
+      render: shell
+    validations:
+      required: false

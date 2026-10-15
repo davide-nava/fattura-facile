@@ -1,0 +1,38 @@
+services:
+    postgres:
+        image: postgres:17
+        container_name: postgres17
+        restart: unless-stopped
+
+        environment:
+            POSTGRES_DB: laravel
+            POSTGRES_USER: laravel
+            POSTGRES_PASSWORD: laravel
+
+        ports:
+            - "5432:5432"
+
+        volumes:
+            - C:/dev/postgres_data:/var/lib/postgresql/data
+
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U laravel -d laravel"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+
+    pgadmin:
+        image: dpage/pgadmin4:latest
+        container_name: pgadmin
+        restart: unless-stopped
+
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@local.dev
+            PGADMIN_DEFAULT_PASSWORD: Admin123!
+
+        ports:
+            - "8080:80"
+
+        depends_on:
+            postgres:
+                condition: service_healthy

@@ -1,0 +1,25 @@
+{
+    "agents": [
+        "claude_code"
+    ],
+    "cloud": true,
+    "guidelines": true,
+    "mcp": true,
+    "nightwatch": false,
+    "sail": false,
+    "skills": [
+        "infer-conventions",
+        "deploying-to-cloud",
+        "folio-routing",
+        "fortify-development",
+        "laravel-best-practices",
+        "testing-best-practices",
+        "configuring-horizon",
+        "scout-development",
+        "socialite-development",
+        "telescope-debugging",
+        "fluxui-development",
+        "livewire-development",
+        "tailwindcss-development"
+    ]
+}

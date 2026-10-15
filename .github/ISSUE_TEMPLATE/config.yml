@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Vulnerability Reporting
+    url: https://github.com/fatturafacile/fatturafacile/security/policy
+    about: Please report confidential security and multi-tenant isolation issues privately.
+  - name: Architecture & Developer Documentation
+    url: https://github.com/fatturafacile/fatturafacile/tree/main/docs
+    about: Explore Architecture Decision Records (ADRs), multi-tenancy lifecycle, and deployment guides.
+  - name: Community & Discussions
+    url: https://github.com/fatturafacile/fatturafacile/discussions
+    about: Ask questions, share ideas, and connect with the community.

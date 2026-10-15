@@ -1,0 +1,57 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Laravel Environment & Local Configuration
+/.env
+/.env.backup
+/.env.production
+/storage/*.key
+
+# Application Storage & Logs
+/storage/app/*
+!/storage/app/.gitignore
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Frontend Build Outputs (Vite)
+/public/build/
+/public/hot
+
+# Database & SQLite files
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# IDE and Editor files
+**/.vs/**
+**/.idea/**
+**/*.user
+**/*.suo
+/.vscode/*
+!/.vscode/extensions.json
+!/.vscode/settings.json
+
+# Test results and coverage
+**/TestResults/**
+**/coverage/**
+**/coveragereport/**
+/.phpunit.result.cache
+/tests/.pest_tokens
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
