@@ -3,8 +3,7 @@
   <component name="PHPUnit">
     <option name="directories">
       <list>
-        <option value="$PROJECT_DIR$/src/FatturaFacile/tests/Unit" />
-        <option value="$PROJECT_DIR$/src/FatturaFacile/tests/Feature" />
+        <option value="C:\dev\fattura-facile\tests" />
       </list>
     </option>
   </component>

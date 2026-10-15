@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for Xdebug (Laravel / Sail)",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "pathMappings": {
+                "/var/www/html": "${workspaceFolder}/src/FatturaFacile"
+            }
+        },
+        {
+            "name": "Launch Built-in server & Debug",
+            "type": "php",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/FatturaFacile/public/index.php",
+            "runtimeArgs": [
+                "-S",
+                "localhost:8000",
+                "-t",
+                "public"
+            ],
+            "port": 9003
+        }
+    ]
+}
