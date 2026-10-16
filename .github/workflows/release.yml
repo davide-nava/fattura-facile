@@ -27,37 +27,37 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: "8.5"
           extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_pgsql, pgsql, bcmath, zip, gd
           coverage: none
 
       - name: Cache Composer Dependencies
         uses: actions/cache@v6
         with:
-          path: src/FatturaFacile/vendor
-          key: ${{ runner.os }}-composer-prod-${{ hashFiles('src/FatturaFacile/composer.lock') }}
+          path: src/laravel/vendor
+          key: ${{ runner.os }}-composer-prod-${{ hashFiles('src/laravel/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-prod-
 
       - name: Install Production Dependencies
-        working-directory: src/FatturaFacile
+        working-directory: src/laravel
         run: composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Cache Node Modules
         uses: actions/cache@v6
         with:
-          path: src/FatturaFacile/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('src/FatturaFacile/package-lock.json') }}
+          path: src/laravel/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('src/laravel/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
       - name: Build Frontend Assets
-        working-directory: src/FatturaFacile
+        working-directory: src/laravel
         run: |
           npm ci
           npm run build
@@ -65,11 +65,11 @@ jobs:
       - name: Package Release Archive
         run: |
           mkdir -p release-build
-          cp -r src/FatturaFacile release-build/
+          cp -r src/laravel release-build/
           cp -r dockers release-build/
           cp -r docs release-build/
           cp README.md LICENSE CHANGELOG.md release-build/
-          cd release-build/FatturaFacile
+          cd release-build/laravel
           rm -rf node_modules .phpunit.cache .phpunit.result.cache tests coverage-report storage/logs/*.log
           cd ../..
           tar -czf "fatturafacile-${{ steps.version.outputs.VERSION }}.tar.gz" -C release-build .

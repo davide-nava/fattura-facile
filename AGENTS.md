@@ -184,8 +184,8 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 ## 1. Directory Structure & Execution Context
 
 - **Repository Root**: Contains infrastructure, IDE configs (`.run/`), root documentation (`docs/`, `dockers/`), and the Laravel application.
-- **Application Directory**: The complete Laravel 13 codebase is located in `src/FatturaFacile/`.
-- **CRITICAL**: When executing Artisan commands, Composer operations, NPM builds, or test runners, **always set the working directory to `src/FatturaFacile/`**.
+- **Application Directory**: The complete Laravel 13 codebase is located in `src/laravel/`.
+- **CRITICAL**: When executing Artisan commands, Composer operations, NPM builds, or test runners, **always set the working directory to `src/laravel/`**.
 
 ```
 FatturaFacile/
@@ -193,7 +193,7 @@ FatturaFacile/
 ├── .run/                    # PhpStorm Run/Debug configurations
 ├── dockers/                 # Container orchestration (PostgreSQL 16/17, pgAdmin)
 ├── docs/                    # Architecture ADRs, deployment guides, double-entry posting rules
-└── src/FatturaFacile/       # Laravel Application Root (Composer, artisan, app/, routes/, tests/)
+└── src/laravel/       # Laravel Application Root (Composer, artisan, app/, routes/, tests/)
 ```
 
 ## 2. Modular Monolith Architecture (`app/Modules/`)
@@ -270,7 +270,7 @@ When creating or modifying models, actions, services, or controllers, you MUST s
 - **100% Coverage Gate**: The CI pipeline and project standards require **100% code coverage** for domain logic, accounting rules, and isolation barriers.
 - **Running Tests**:
   ```bash
-  # Inside src/FatturaFacile
+  # Inside src/laravel
   php artisan test
   # Or with PHPUnit directly:
   php vendor/bin/phpunit --coverage-clover coverage.xml --coverage-text

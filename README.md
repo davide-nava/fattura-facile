@@ -76,7 +76,7 @@ FatturaFacile/
 │   ├── architecture/        # Overview & module diagrams
 │   ├── deployment/          # Cloud SaaS and On-Premise guides
 │   └── tenancy/             # Tenant lifecycle and isolation
-└── src/FatturaFacile/       # Laravel Application Root
+└── src/laravel/       # Laravel Application Root
     ├── app/
     │   ├── Modules/         # 17 Domain-Driven ERP Modules
     │   ├── Shared/          # MoneyValue (BCMath), TenantAware traits, Enums
@@ -114,7 +114,7 @@ Before installing FatturaFacile locally, ensure you have:
 
 2. **Navigate to the Laravel application directory**:
    ```bash
-   cd src/FatturaFacile
+   cd src/laravel
    ```
 
 3. **Install Dependencies**:
@@ -157,7 +157,7 @@ To spin up the entire containerized stack (App, Nginx web server, PostgreSQL 16,
 
 ```bash
 # Navigate to the Laravel application root
-cd src/FatturaFacile
+cd src/laravel
 
 # Start all containers in background
 docker compose -f compose.yaml up -d
@@ -172,7 +172,7 @@ Access the panel at: [http://localhost:8080/admin](http://localhost:8080/admin)
 
 ## 7. Environment Configuration Guide (`.env.example`)
 
-The application is configured using standard environment variables defined in `src/FatturaFacile/.env.example`:
+The application is configured using standard environment variables defined in `src/laravel/.env.example`:
 
 | Variable | Default Value | Description |
 | :--- | :--- | :--- |
@@ -201,7 +201,7 @@ The application is configured using standard environment variables defined in `s
 
 FatturaFacile enforces **100% code coverage** across all statements, methods, and domain logic. Every PR must satisfy this gate in CI.
 
-From the `src/FatturaFacile` directory:
+From the `src/laravel` directory:
 
 1. **Run Full Test Suite**:
    ```bash
@@ -272,8 +272,8 @@ Pre-configured run and debug configurations are located in `.run/`:
 | Configuration | Type | Purpose |
 | :--- | :--- | :--- |
 | **All Tests (PHPUnit with Coverage)** | PHPUnit | Executes complete test suite with Xdebug code coverage generation |
-| **Unit Tests** | PHPUnit | Runs all unit tests targeting `src/FatturaFacile/tests/Unit` |
-| **Feature Tests** | PHPUnit | Runs all feature tests targeting `src/FatturaFacile/tests/Feature` |
+| **Unit Tests** | PHPUnit | Runs all unit tests targeting `src/laravel/tests/Unit` |
+| **Feature Tests** | PHPUnit | Runs all feature tests targeting `src/laravel/tests/Feature` |
 | **Serve (Debug)** | PHP Script | Launches `artisan serve --port=8000` with Xdebug listener |
 | **Queue Worker (Debug)** | PHP Script | Starts background queue worker `artisan queue:listen --tries=1` |
 | **Pint Code Style** | PHP Script | Runs `vendor/bin/pint` to enforce code style |

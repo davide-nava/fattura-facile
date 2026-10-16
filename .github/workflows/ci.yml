@@ -2,13 +2,13 @@ name: CI/CD Quality Gate & Deployment
 
 on:
   push:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
   pull_request:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
 
 defaults:
   run:
-    working-directory: src/FatturaFacile
+    working-directory: src/laravel
 
 jobs:
   code-quality:
@@ -22,15 +22,15 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: "8.5"
           extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_pgsql, pgsql, bcmath, zip, gd
           coverage: none
 
       - name: Cache Composer packages
         uses: actions/cache@v6
         with:
-          path: src/FatturaFacile/vendor
-          key: ${{ runner.os }}-composer-${{ hashFiles('src/FatturaFacile/composer.lock') }}
+          path: src/laravel/vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('src/laravel/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
 
@@ -61,10 +61,7 @@ jobs:
         ports:
           - 5432:5432
         options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+          --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
       - name: Checkout Code
@@ -73,15 +70,15 @@ jobs:
       - name: Setup PHP with Coverage
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: "8.5"
           extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_pgsql, pgsql, pdo_sqlite, sqlite3, bcmath, zip, gd
           coverage: xdebug
 
       - name: Cache Composer packages
         uses: actions/cache@v6
         with:
-          path: src/FatturaFacile/vendor
-          key: ${{ runner.os }}-composer-${{ hashFiles('src/FatturaFacile/composer.lock') }}
+          path: src/laravel/vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('src/laravel/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
 
@@ -129,7 +126,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: code-coverage-report
-          path: src/FatturaFacile/coverage.xml
+          path: src/laravel/coverage.xml
           retention-days: 14
 
   deploy:

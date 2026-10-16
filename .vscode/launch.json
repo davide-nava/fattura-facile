@@ -7,14 +7,14 @@
             "request": "launch",
             "port": 9003,
             "pathMappings": {
-                "/var/www/html": "${workspaceFolder}/src/FatturaFacile"
+                "/var/www/html": "${workspaceFolder}/src/laravel"
             }
         },
         {
             "name": "Launch Built-in server & Debug",
             "type": "php",
             "request": "launch",
-            "program": "${workspaceFolder}/src/FatturaFacile/public/index.php",
+            "program": "${workspaceFolder}/src/laravel/public/index.php",
             "runtimeArgs": [
                 "-S",
                 "localhost:8000",

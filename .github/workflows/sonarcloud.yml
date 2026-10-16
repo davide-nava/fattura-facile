@@ -34,13 +34,13 @@ jobs:
       - name: Cache Composer Dependencies
         uses: actions/cache@v6
         with:
-          path: src/FatturaFacile/vendor
-          key: ${{ runner.os }}-composer-${{ hashFiles('src/FatturaFacile/composer.lock') }}
+          path: src/laravel/vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('src/laravel/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
 
       - name: Install Dependencies
-        working-directory: src/FatturaFacile
+        working-directory: src/laravel
         run: composer install --prefer-dist --no-progress --no-interaction
 
       - name: SonarQube Scan

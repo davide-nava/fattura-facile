@@ -1,0 +1,1 @@
+downloader::copy .ftpquota io: read/write on closed pipe

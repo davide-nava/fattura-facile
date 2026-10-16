@@ -18,7 +18,7 @@ FatturaFacile/
 ├── .run/                    # PhpStorm Run/Debug configurations
 ├── dockers/                 # PostgreSQL 16/17 and pgAdmin orchestration
 ├── docs/                    # Architecture ADRs, deployment guides, accounting rules
-└── src/FatturaFacile/       # Laravel Application Root
+└── src/laravel/       # Laravel Application Root
     ├── app/
     │   ├── Modules/         # 17 Domain-Driven ERP Modules
     │   ├── Shared/          # BCMath MoneyValue, TenantAware traits, Enums
@@ -30,7 +30,7 @@ FatturaFacile/
 ```
 
 > [!IMPORTANT]
-> **Working Directory**: The Laravel application resides in `src/FatturaFacile/`. All PHP, Composer, Artisan, Pint, PHPUnit, and NPM commands **MUST** be executed inside `src/FatturaFacile/`.
+> **Working Directory**: The Laravel application resides in `src/laravel/`. All PHP, Composer, Artisan, Pint, PHPUnit, and NPM commands **MUST** be executed inside `src/laravel/`.
 
 ---
 
@@ -124,7 +124,7 @@ The FatturaFacile CI/CD pipeline enforces a strict **100% Code Coverage Quality 
 - **Test Framework**: PHPUnit 12 & Pest 4.
 - **Rules for New Code**:
   - Every new method, model relation, API endpoint, or service MUST include unit or feature tests.
-  - Test files must reside in `src/FatturaFacile/tests/Unit/` or `src/FatturaFacile/tests/Feature/`.
+  - Test files must reside in `src/laravel/tests/Unit/` or `src/laravel/tests/Feature/`.
   - Run the test suite:
     ```bash
     # Run full test suite

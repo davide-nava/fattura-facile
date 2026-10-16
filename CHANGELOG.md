@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - **Release CI Workflow**: Corrected syntax errors, updated to PHP 8.5, and added production asset compilation and tarball/zip packaging in `.github/workflows/release.yml`.
-- **SonarCloud Configuration**: Updated `.sonarcloud.properties` and `.github/workflows/sonarcloud.yml` to reflect `src/FatturaFacile` directory layout and PHP 8.5.
+- **SonarCloud Configuration**: Updated `.sonarcloud.properties` and `.github/workflows/sonarcloud.yml` to reflect `src/laravel` directory layout and PHP 8.5.
 
 ## [1.1.0] - 2026-10-15
 
@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Automatic Database Migrations**: Implemented `App\Support\Database\AutoMigrator` to detect and run pending database migrations automatically during application bootstrap in `AppServiceProvider::boot()`, with CLI safety guards and `AUTO_MIGRATE` configuration.
 - **100% Automated Code Coverage**: Achieved complete 100% code coverage across all statements, methods, and elements with 161 tests and 597 assertions covering multi-tenancy isolation, models, relations, Livewire components, API endpoints, Filament resources, Fortify auth, and financial math.
 - **PhpStorm Run/Debug Configurations**: Added pre-configured `.run/` configurations for PHPUnit with coverage, Unit tests, Feature tests, Artisan Serve debug, Queue Worker debug, and Pint code styling.
-- **Optimized GitHub Actions CI/CD Pipeline**: Upgraded `.github/workflows/ci.yml` with working-directory support for `src/FatturaFacile`, PostgreSQL 16 migration testing, automated security audits, a strict 100% code coverage quality gate, and production Docker build automation.
+- **Optimized GitHub Actions CI/CD Pipeline**: Upgraded `.github/workflows/ci.yml` with working-directory support for `src/laravel`, PostgreSQL 16 migration testing, automated security audits, a strict 100% code coverage quality gate, and production Docker build automation.
 - **English Documentation Standard**: Standardized repository markdown files, technical architecture ADRs, and code comments into clear, professional English.
 
 ## [1.0.0] - 2026-10-14

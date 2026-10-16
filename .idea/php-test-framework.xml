@@ -19,7 +19,7 @@
       <tool tool_name="Pest">
         <settings>
           <configurations>
-            <local_configuration executable_path="$PROJECT_DIR$/src/FatturaFacile/vendor/bin/pest" />
+            <local_configuration executable_path="$PROJECT_DIR$/src/laravel/vendor/bin/pest" />
           </configurations>
         </settings>
       </tool>
@@ -30,28 +30,36 @@
       <tool tool_name="Behat">
         <cache>
           <versions>
-            <info id="LocalC:\tools\behat.phar" version="4.0.0.0" />
+            <info
+                id="LocalC:\tools\behat.phar"
+                version="4.0.0.0" />
           </versions>
         </cache>
       </tool>
       <tool tool_name="PHPSpec">
         <cache>
           <versions>
-            <info id="LocalC:\tools\phpspec.phar" version="9.0.0" />
+            <info
+                id="LocalC:\tools\phpspec.phar"
+                version="9.0.0" />
           </versions>
         </cache>
       </tool>
       <tool tool_name="PHPUnit">
         <cache>
           <versions>
-            <info id="LocalC:\tools\phpunit.phar" version="13.4.2" />
+            <info
+                id="LocalC:\tools\phpunit.phar"
+                version="13.4.2" />
           </versions>
         </cache>
       </tool>
       <tool tool_name="Pest">
         <cache>
           <versions>
-            <info id="Local\src/FatturaFacile/vendor/bin/pest" version="4.7.8" />
+            <info
+                id="Local\src/laravel/vendor/bin/pest"
+                version="4.7.8" />
           </versions>
         </cache>
       </tool>

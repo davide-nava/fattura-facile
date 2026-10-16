@@ -12,7 +12,7 @@ updates:
           - "*"
 
   - package-ecosystem: "composer"
-    directory: "/src/FatturaFacile"
+    directory: "/src/laravel"
     schedule:
       interval: "weekly"
     cooldown:

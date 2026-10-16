@@ -51,7 +51,7 @@ We follow a structured Git branching strategy to ensure stability:
 
 ## Local Development Setup
 
-The Laravel application root is located in `src/FatturaFacile/`.
+The Laravel application root is located in `src/laravel/`.
 
 ### Prerequisites
 - **PHP**: 8.5+ with extensions `bcmath`, `intl`, `pdo_pgsql`, `pgsql`, `pdo_sqlite`, `sqlite3`, `zip`, `gd`
@@ -63,7 +63,7 @@ The Laravel application root is located in `src/FatturaFacile/`.
 
 1. **Navigate to the application directory**:
    ```bash
-   cd src/FatturaFacile
+   cd src/laravel
    ```
 
 2. **Install Composer Dependencies**:
@@ -89,7 +89,7 @@ The Laravel application root is located in `src/FatturaFacile/`.
    # From root directory:
    docker compose -f dockers/docker-compose.yml up -d postgres
    ```
-   Or use the full stack defined in `src/FatturaFacile/compose.yaml`.
+   Or use the full stack defined in `src/laravel/compose.yaml`.
 
 6. **Run Database Migrations & Seed Demo Data**:
    ```bash
@@ -175,7 +175,7 @@ Any Pull Request that breaks any of the following core invariants will be automa
 FatturaFacile enforces a **strict 100% Code Coverage Gate** across all statements, methods, and paths in core domain modules.
 
 ### Running Tests
-Execute the test suite from `src/FatturaFacile`:
+Execute the test suite from `src/laravel`:
 
 ```bash
 # Run tests using Pest / Artisan test runner

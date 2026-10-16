@@ -1,5 +1,13 @@
 {
   "servers": {
+    "dxdocs": {
+      "url": "https://api.devexpress.com/mcp/docs",
+      "type": "http"
+    },
+    "dxdocs26_1": {
+      "url": "https://api.devexpress.com/mcp/docs?v=26.1",
+      "type": "http"
+    },
     "filesystem": {
       "type": "stdio",
       "command": "npx",
@@ -20,13 +28,10 @@
       "args": ["-y", "mcp-server-git", "."]
     }
   },
-	"mcpServers": {
-		"laravel-boost": {
-			"command": "php",
-			"args": [
-				"artisan",
-				"boost:mcp"
-			]
-		}
-	}
+  "mcpServers": {
+    "laravel-boost": {
+      "command": "php",
+      "args": ["artisan", "boost:mcp"]
+    }
+  }
 }

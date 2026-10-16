@@ -1,11 +1,21 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Feature Tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+  <configuration
+      default="false"
+      name="Feature Tests"
+      type="PHPUnitRunConfigurationType"
+      factoryName="PHPUnit">
     <CommandLine>
       <PhpTestInterpreterSettings>
-        <option name="interpreterName" value="PHP" />
+        <option
+            name="interpreterName"
+            value="PHP" />
       </PhpTestInterpreterSettings>
     </CommandLine>
-    <TestRunner configuration_file="$PROJECT_DIR$/src/FatturaFacile/phpunit.xml" directory="$PROJECT_DIR$/src/FatturaFacile/tests/Feature" scope="XML" use_alternative_configuration_file="true" />
+    <TestRunner
+        configuration_file="$PROJECT_DIR$/src/laravel/phpunit.xml"
+        directory="$PROJECT_DIR$/src/laravel/tests/Feature"
+        scope="XML"
+        use_alternative_configuration_file="true" />
     <method v="2" />
   </configuration>
 </component>
