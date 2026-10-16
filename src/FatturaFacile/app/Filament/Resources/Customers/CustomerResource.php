@@ -3,12 +3,16 @@
 namespace App\Filament\Resources\Customers;
 
 use App\Filament\Resources\Customers\Pages\ManageCustomers;
+use App\Modules\CrmContacts\Handlers\GetCustomerSalesStatsHandler;
+use App\Modules\CrmContacts\Queries\GetCustomerSalesStatsQuery;
 use App\Modules\Customers\Models\Customer;
 use BackedEnum;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -26,7 +30,7 @@ class CustomerResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
 
-    protected static string|UnitEnum|null $navigationGroup = 'Sales & Partners';
+    protected static string|UnitEnum|null $navigationGroup = 'CRM & Contacts';
 
     public static function form(Schema $schema): Schema
     {
@@ -39,6 +43,8 @@ class CustomerResource extends Resource
                     ->maxLength(50),
                 TextInput::make('tax_number')
                     ->label('Swiss UID (CHE-xxx.xxx.xxx)')
+                    ->maxLength(50),
+                TextInput::make('vat_number')
                     ->maxLength(50),
                 TextInput::make('email')
                     ->email()
@@ -61,6 +67,14 @@ class CustomerResource extends Resource
                 TextInput::make('payment_term_days')
                     ->numeric()
                     ->default(30),
+                TextInput::make('credit_limit')
+                    ->numeric()
+                    ->prefix('CHF')
+                    ->default('0.00'),
+                Select::make('groups')
+                    ->relationship('groups', 'name')
+                    ->multiple()
+                    ->preload(),
                 Toggle::make('is_active')
                     ->default(true),
                 Textarea::make('notes')
@@ -94,6 +108,18 @@ class CustomerResource extends Resource
             ])
             ->recordActions([
                 EditAction::make(),
+                Action::make('salesStats')
+                    ->label('Sales Stats')
+                    ->icon(Heroicon::OutlinedChartBar)
+                    ->color('info')
+                    ->modalHeading(fn (Customer $record): string => "Sales Statistics - {$record->name}")
+                    ->modalDescription(function (Customer $record): string {
+                        /** @var GetCustomerSalesStatsHandler $handler */
+                        $handler = app(GetCustomerSalesStatsHandler::class);
+                        $stats = $handler->handle(new GetCustomerSalesStatsQuery($record->id));
+
+                        return "Total Invoiced: {$stats->currency} {$stats->totalInvoiced} | Outstanding: {$stats->currency} {$stats->totalOutstanding} | Invoices: {$stats->invoicesCount} | Orders: {$stats->salesOrdersCount} | Quotes: {$stats->quotesCount} | Avg Order Value: {$stats->currency} {$stats->averageOrderValue}";
+                    }),
                 DeleteAction::make(),
             ])
             ->toolbarActions([

@@ -45,7 +45,11 @@ class InitializeTenantContext
 
             // Fallback to first available active tenant for this user
             if (! $tenant) {
-                $tenant = $user->tenants()->where('tenants.is_active', true)->wherePivot('is_active', true)->first();
+                if (method_exists($user, 'tenants')) {
+                    $tenant = $user->tenants()->where('tenants.is_active', true)->wherePivot('is_active', true)->first();
+                } elseif (! empty($user->tenant_id)) {
+                    $tenant = Tenant::withoutGlobalScopes()->where('id', $user->tenant_id)->where('is_active', true)->first();
+                }
             }
 
             if ($tenant) {

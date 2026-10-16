@@ -3,15 +3,19 @@
 ])
 
 @if($sidebar)
-    <flux:sidebar.brand :name="config('app.name', 'Laravel')" {{ $attributes }}>
-        <x-slot name="logo" class="flex aspect-square size-8 items-center justify-center rounded-md bg-accent-content text-accent-foreground">
-            <x-app-logo-icon class="size-5 fill-current text-white dark:text-black" />
+    <flux:sidebar.brand :name="config('app.name', 'FatturaFacile')" {{ $attributes }}>
+        <x-slot name="logo" class="flex aspect-square size-9 items-center justify-center rounded-xl bg-slate-900 dark:bg-slate-800 p-1">
+            <x-app-logo-icon class="size-7" />
         </x-slot>
     </flux:sidebar.brand>
 @else
-    <flux:brand :name="config('app.name', 'Laravel')" {{ $attributes }}>
-        <x-slot name="logo" class="flex aspect-square size-8 items-center justify-center rounded-md bg-accent-content text-accent-foreground">
-            <x-app-logo-icon class="size-5 fill-current text-white dark:text-black" />
-        </x-slot>
-    </flux:brand>
+    <a {{ $attributes->merge(['class' => 'flex items-center gap-3 group']) }}>
+        <x-app-logo-icon class="h-10 w-10 shrink-0 transition-transform duration-300 group-hover:scale-105" />
+        <div class="flex flex-col">
+            <span class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
+                Fattura<span class="text-teal-600">Facile</span>
+            </span>
+            <span class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 mt-1">Fatture semplici, offline e cloud</span>
+        </div>
+    </a>
 @endif

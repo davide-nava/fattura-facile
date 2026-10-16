@@ -15,7 +15,7 @@
             :separator="__('Or confirm with password')"
         />
 
-        <form method="POST" action="{{ route('password.confirm.store') }}" class="flex flex-col gap-6">
+        <form method="POST" action="{{ route('password.confirm.store') }}" class="flex flex-col gap-5">
             @csrf
 
             <flux:input
@@ -28,9 +28,11 @@
                 viewable
             />
 
-            <flux:button variant="primary" type="submit" class="w-full" data-test="confirm-password-button">
-                {{ __('Confirm') }}
-            </flux:button>
+            <div class="pt-2">
+                <flux:button variant="primary" type="submit" class="w-full bg-slate-900 hover:bg-teal-700 text-white font-bold py-3 rounded-xl shadow-sm transition-all duration-200" data-test="confirm-password-button">
+                    {{ __('Confirm') }}
+                </flux:button>
+            </div>
         </form>
     </div>
 </x-layouts::auth>

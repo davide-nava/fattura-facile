@@ -2,6 +2,8 @@
 
 namespace App\Modules\Suppliers\Models;
 
+use App\Modules\CrmContacts\Models\ContactGroup;
+use App\Modules\CrmContacts\Models\ContactPerson;
 use App\Modules\Purchasing\Models\PurchaseOrder;
 use App\Modules\Purchasing\Models\SupplierInvoice;
 use App\Shared\Traits\BelongsToCompany;
@@ -9,6 +11,9 @@ use App\Shared\Traits\BelongsToTenant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Supplier extends Model
 {
@@ -48,5 +53,20 @@ class Supplier extends Model
     public function supplierInvoices(): HasMany
     {
         return $this->hasMany(SupplierInvoice::class, 'supplier_id');
+    }
+
+    public function contactPersons(): MorphMany
+    {
+        return $this->morphMany(ContactPerson::class, 'contactable');
+    }
+
+    public function primaryContact(): MorphOne
+    {
+        return $this->morphOne(ContactPerson::class, 'contactable')->where('is_primary', true);
+    }
+
+    public function groups(): MorphToMany
+    {
+        return $this->morphToMany(ContactGroup::class, 'member', 'contact_group_memberships');
     }
 }

@@ -79,18 +79,20 @@
                         @enderror
                     </div>
 
-                    <flux:button
-                        variant="primary"
-                        type="submit"
-                        class="w-full"
-                    >
-                        {{ __('Continue') }}
-                    </flux:button>
+                    <div class="pt-2">
+                        <flux:button
+                            variant="primary"
+                            type="submit"
+                            class="w-full bg-slate-900 hover:bg-teal-700 text-white font-bold py-3 rounded-xl shadow-sm transition-all duration-200"
+                        >
+                            {{ __('Continue') }}
+                        </flux:button>
+                    </div>
                 </div>
 
-                <div class="mt-5 space-x-0.5 text-sm leading-5 text-center">
-                    <span class="opacity-50">{{ __('or you can') }}</span>
-                    <div class="inline font-medium underline cursor-pointer opacity-80">
+                <div class="mt-5 space-x-0.5 text-sm leading-5 text-center text-slate-600 dark:text-slate-400 pt-3 border-t border-slate-100">
+                    <span>{{ __('or you can') }}</span>
+                    <div class="inline font-medium text-teal-600 hover:text-teal-700 underline cursor-pointer">
                         <span x-show="!showRecoveryInput" @click="toggleInput()">{{ __('login using a recovery code') }}</span>
                         <span x-show="showRecoveryInput" @click="toggleInput()">{{ __('login using an authentication code') }}</span>
                     </div>

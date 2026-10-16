@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Modules\CrmContacts\Models\CustomerPortalUser;
 
 return [
 
@@ -42,6 +43,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'customer_portal' => [
+            'driver' => 'session',
+            'provider' => 'customer_portal_users',
+        ],
     ],
 
     /*
@@ -66,11 +71,10 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', User::class),
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'customer_portal_users' => [
+            'driver' => 'eloquent',
+            'model' => CustomerPortalUser::class,
+        ],
     ],
 
     /*

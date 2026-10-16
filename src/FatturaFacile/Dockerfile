@@ -1,6 +1,5 @@
 FROM php:8.5-fpm-alpine
 
-# Install system dependencies
 RUN apk add --no-cache \
     postgresql-dev \
     libzip-dev \
@@ -8,43 +7,55 @@ RUN apk add --no-cache \
     libjpeg-turbo-dev \
     freetype-dev \
     icu-dev \
-    oniguruma-dev \
     linux-headers \
     git \
     curl \
     unzip \
     supervisor \
-    $PHPIZE_DEPS \
-    && pecl install redis \
-    && docker-php-ext-enable redis \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) \
-        pdo \
-        pdo_pgsql \
-        pgsql \
-        bcmath \
-        intl \
-        zip \
-        gd \
-        opcache \
-        pcntl \
-    && apk del $PHPIZE_DEPS
+    $PHPIZE_DEPS
 
-# Install Composer
+RUN docker-php-ext-configure gd \
+    --with-freetype \
+    --with-jpeg
+
+RUN docker-php-ext-install \
+    pdo \
+    pdo_pgsql \
+    pgsql \
+    bcmath \
+    intl \
+    zip \
+    gd \
+    exif \
+    pcntl
+
+RUN pecl install redis \
+    && docker-php-ext-enable redis
+
+RUN apk del $PHPIZE_DEPS \
+    && rm -rf /tmp/pear
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Set working directory
 WORKDIR /var/www/html
 
-# Copy application source
-COPY . /var/www/html
+COPY . .
 
-# Install Composer dependencies (production ready)
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer install \
+    --no-dev \
+    --optimize-autoloader \
+    --no-interaction \
+    --no-progress
 
-# Permissions
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+RUN mkdir -p \
+    storage/framework/cache \
+    storage/framework/sessions \
+    storage/framework/views \
+    storage/logs \
+    bootstrap/cache
+
+RUN chown -R www-data:www-data storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 9000
 
