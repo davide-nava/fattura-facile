@@ -55,15 +55,15 @@
             />
 
             <div class="pt-2">
-                <flux:button type="submit" variant="primary" class="w-full bg-slate-900 hover:bg-teal-700 text-white font-bold py-3 rounded-xl shadow-sm transition-all duration-200" data-test="register-user-button">
+                <flux:button type="submit" variant="primary" class="w-full bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 text-white font-bold py-3 rounded-xl shadow-sm transition-all duration-200 cursor-pointer" data-test="register-user-button">
                     {{ __('Create account') }}
                 </flux:button>
             </div>
         </form>
 
-        <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-slate-600 dark:text-slate-400 pt-2 border-t border-slate-100">
+        <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-slate-600 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
             <span>{{ __('Already have an account?') }}</span>
-            <flux:link :href="route('login')" class="text-teal-600 hover:text-teal-700 font-semibold" wire:navigate>{{ __('Log in') }}</flux:link>
+            <flux:link :href="route('login')" class="text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-semibold" wire:navigate>{{ __('Log in') }}</flux:link>
         </div>
     </div>
 </x-layouts::auth>

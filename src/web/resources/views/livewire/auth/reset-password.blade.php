@@ -45,7 +45,7 @@
             />
 
             <div class="pt-2">
-                <flux:button type="submit" variant="primary" class="w-full bg-slate-900 hover:bg-teal-700 text-white font-bold py-3 rounded-xl shadow-sm transition-all duration-200" data-test="reset-password-button">
+                <flux:button type="submit" variant="primary" class="w-full bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 text-white font-bold py-3 rounded-xl shadow-sm transition-all duration-200 cursor-pointer" data-test="reset-password-button">
                     {{ __('Reset password') }}
                 </flux:button>
             </div>

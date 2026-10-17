@@ -11,5 +11,63 @@
 
 @fonts
 
+<script>
+    (function () {
+        function resolveTheme() {
+            const storedTheme = localStorage.getItem('theme');
+            const storedFlux = localStorage.getItem('flux.appearance');
+            const preference = storedFlux || storedTheme;
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (preference === 'dark') return 'dark';
+            if (preference === 'light') return 'light';
+            if (preference === 'system') return prefersDark ? 'dark' : 'light';
+            return prefersDark ? 'dark' : 'light';
+        }
+
+        const effective = resolveTheme();
+        if (effective === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        window.applyTheme = function (theme) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = theme === 'dark' || (theme === 'system' && prefersDark);
+
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            localStorage.setItem('flux.appearance', theme);
+
+            if (window.$flux) {
+                window.$flux.appearance = theme;
+            }
+
+            window.dispatchEvent(new CustomEvent('theme-changed', {
+                detail: { theme: isDark ? 'dark' : 'light', mode: theme }
+            }));
+        };
+
+        window.toggleTheme = function () {
+            const currentlyDark = document.documentElement.classList.contains('dark');
+            window.applyTheme(currentlyDark ? 'light' : 'dark');
+        };
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+            const fluxApp = localStorage.getItem('flux.appearance');
+            const themeApp = localStorage.getItem('theme');
+            if (fluxApp === 'system' || (!fluxApp && !themeApp)) {
+                window.applyTheme('system');
+            }
+        });
+    })();
+</script>
+
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 @fluxAppearance

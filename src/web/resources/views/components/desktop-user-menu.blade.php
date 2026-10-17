@@ -18,9 +18,12 @@
             </div>
         </div>
         <flux:menu.separator />
-        <flux:menu.radio.group>
             <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate>
                 {{ __('Settings') }}
+            </flux:menu.item>
+            <flux:menu.item icon="sun" onclick="toggleTheme()" class="cursor-pointer">
+                <span class="block dark:hidden">{{ __('Dark mode') }}</span>
+                <span class="hidden dark:block">{{ __('Light mode') }}</span>
             </flux:menu.item>
             <form method="POST" action="{{ route('logout') }}" class="w-full">
                 @csrf

@@ -83,16 +83,16 @@
                         <flux:button
                             variant="primary"
                             type="submit"
-                            class="w-full bg-slate-900 hover:bg-teal-700 text-white font-bold py-3 rounded-xl shadow-sm transition-all duration-200"
+                            class="w-full bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 text-white font-bold py-3 rounded-xl shadow-sm transition-all duration-200 cursor-pointer"
                         >
                             {{ __('Continue') }}
                         </flux:button>
                     </div>
                 </div>
 
-                <div class="mt-5 space-x-0.5 text-sm leading-5 text-center text-slate-600 dark:text-slate-400 pt-3 border-t border-slate-100">
+                <div class="mt-5 space-x-0.5 text-sm leading-5 text-center text-slate-600 dark:text-slate-400 pt-3 border-t border-slate-100 dark:border-slate-800">
                     <span>{{ __('or you can') }}</span>
-                    <div class="inline font-medium text-teal-600 hover:text-teal-700 underline cursor-pointer">
+                    <div class="inline font-medium text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 underline cursor-pointer">
                         <span x-show="!showRecoveryInput" @click="toggleInput()">{{ __('login using a recovery code') }}</span>
                         <span x-show="showRecoveryInput" @click="toggleInput()">{{ __('login using an authentication code') }}</span>
                     </div>

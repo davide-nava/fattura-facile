@@ -1,5 +1,5 @@
 <div
-    class="py-6 space-y-6 border shadow-sm rounded-xl border-zinc-200 dark:border-white/10"
+    class="py-6 space-y-6 border shadow-sm rounded-2xl border-slate-200 dark:border-slate-800"
     wire:cloak
     x-data="{ showRecoveryCodes: false }"
 >
@@ -65,7 +65,7 @@
 
                 @if (filled($recoveryCodes))
                     <div
-                        class="grid gap-1 p-4 font-mono text-sm rounded-lg bg-zinc-100 dark:bg-white/5"
+                        class="grid gap-1 p-4 font-mono text-sm rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-slate-900 dark:text-slate-100"
                         role="list"
                         aria-label="{{ __('Recovery codes') }}"
                     >

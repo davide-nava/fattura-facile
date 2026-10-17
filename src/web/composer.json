@@ -2,8 +2,11 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "laravel/livewire-starter-kit",
     "type": "project",
-    "description": "The official Laravel starter kit for Livewire.",
-    "keywords": ["laravel", "framework"],
+    "description": "Fattura Facile.",
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.5",
@@ -57,9 +60,9 @@
     },
     "scripts": {
         "setup": [
-            "composer install",
+            "composer install --ignore-platform-req=ext-pcntl --ignore-platform-req=ext-posix",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan key:generate",
+            "@php artisan key:generate --ansi",
             "@php artisan migrate --force",
             "npm install",
             "npm run build"
@@ -119,6 +122,10 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
+        "platform": {
+            "ext-pcntl": "8.5",
+            "ext-posix": "8.5"
+        },
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true

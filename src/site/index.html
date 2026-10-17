@@ -20,7 +20,7 @@
     <link rel="canonical"
           href="https://fatturafacile.eu/">
 
-    <!-- Meta Geografici (Target Italia & Svizzera) -->
+    <!-- Meta Geografici -->
     <meta name="geo.region"
           content="IT;CH">
     <meta name="geo.placename"
@@ -63,7 +63,6 @@
           content="https://fatturafacile.eu/fattura_facile_logo.svg">
 
     <!-- Favicon & Icone -->
-
     <link rel="alternate icon"
           href="/favicon.ico">
     <link rel="apple-touch-icon"
@@ -80,36 +79,36 @@
     <link rel="manifest"
           href="/site.webmanifest">
 
-    <!-- Schema.org JSON-LD per Google Rich Snippets -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Fattura Facile",
-    "alternateName": "FatturaFacile",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Windows 10, Windows 11",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR"
-    },
-    "description": "Software di fatturazione semplice, veloce e offline per artigiani, elettricisti, idraulici e liberi professionisti. Supporta FatturaPA (SDI) per l'Italia e QR-Bill per la Svizzera.",
-    "url": "https://fatturafacile.eu/",
-    "author": {
-      "@type": "Person",
-      "name": "Fattura Facile Teams"
-    },
-    "featureList": [
-      "Fatturazione offline portabile su USB con SQLite",
-      "Zero installazione e zero abbonamenti",
-      "Supporto FatturaPA XML e SDI per Italia",
-      "Supporto QR-Fattura standard SIX per Svizzera",
-      "Conformità nativa GDPR UE e nLPD Svizzera",
-      "Opzione Self-Hosted Cloud multi-utente gratuita"
-    ]
-  }
-  </script>
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Fattura Facile",
+      "alternateName": "FatturaFacile",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "description": "Software di fatturazione semplice, veloce e offline per artigiani, elettricisti, idraulici e liberi professionisti. Supporta FatturaPA (SDI) per l'Italia e QR-Bill per la Svizzera.",
+      "url": "https://fatturafacile.eu/",
+      "author": {
+        "@type": "Person",
+        "name": "Fattura Facile Teams"
+      },
+      "featureList": [
+        "Fatturazione offline portabile su USB con SQLite",
+        "Zero installazione e zero abbonamenti",
+        "Supporto FatturaPA XML e SDI per Italia",
+        "Supporto QR-Fattura standard SIX per Svizzera",
+        "Conformità nativa GDPR UE e nLPD Svizzera",
+        "Opzione Self-Hosted Cloud multi-utente gratuita"
+      ]
+    }
+    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -135,66 +134,55 @@
         }
       }
     </script>
-    <style>
-      .tab-active {
-        background-color: #0d9488 !important;
-        color: #ffffff !important;
-        box-shadow: 0 4px 14px 0 rgba(13, 148, 136, 0.39);
-      }
 
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: #f1f5f9;
-      }
-
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 4px;
-      }
-    </style>
+    <!-- CSS Esterno Estratto -->
+    <link rel="stylesheet"
+          href="css/style.css">
   </head>
 
-  <body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-teal-500 selection:text-white">
+  <body
+        class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased font-sans selection:bg-teal-500 selection:text-white transition-colors duration-200">
 
     <!-- Header & Navigazione -->
     <header
-            class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/90 border-b border-slate-200/80 transition-all duration-300">
+            class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
-        <!-- Logo Branding Coerente con la versione precedente -->
+        <!-- Logo Branding -->
         <a href="#hero"
            class="flex items-center gap-3 group"
            aria-label="Fattura Facile Home">
-          <!-- SVG Logo Icon -->
           <svg class="h-10 w-10 shrink-0 transition-transform duration-300 group-hover:scale-105"
                viewBox="0 0 512 512"
                fill="none">
-            <path d="M 200,450 L 130,450 C 100,450 80,430 80,400 L 80,110 C 80,80 100,60 130,60 L 330,60"
+            <path class="logo-stroke-adaptive"
+                  d="M 200,450 L 130,450 C 100,450 80,430 80,400 L 80,110 C 80,80 100,60 130,60 L 330,60"
                   stroke="#0f172a"
                   stroke-width="26"
                   stroke-linecap="round"
                   stroke-linejoin="round" />
-            <path d="M 330,60 L 420,150 L 420,280"
+            <path class="logo-stroke-adaptive"
+                  d="M 330,60 L 420,150 L 420,280"
                   stroke="#0f172a"
                   stroke-width="26"
                   stroke-linecap="round"
                   stroke-linejoin="round" />
-            <path d="M 330,60 L 330,150 L 420,150"
+            <path class="logo-stroke-adaptive"
+                  d="M 330,60 L 330,150 L 420,150"
                   stroke="#0f172a"
                   stroke-width="24"
                   stroke-linecap="round"
                   stroke-linejoin="round" />
-            <line x1="150"
+            <line class="logo-stroke-adaptive"
+                  x1="150"
                   y1="180"
                   x2="270"
                   y2="180"
                   stroke="#0f172a"
                   stroke-width="22"
                   stroke-linecap="round" />
-            <line x1="150"
+            <line class="logo-stroke-adaptive"
+                  x1="150"
                   y1="240"
                   x2="235"
                   y2="240"
@@ -239,42 +227,71 @@
                     fill="#FFFFFF" />
           </svg>
           <div class="flex flex-col">
-            <span class="text-2xl font-extrabold tracking-tight text-slate-900 leading-none">
-              Fattura<span class="text-teal-600">Facile</span>
+            <span class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
+              Fattura<span class="text-teal-600 dark:text-teal-400">Facile</span>
             </span>
-            <!-- Testo del logo allineato alla versione precedente -->
-            <span class="text-[11px] font-semibold text-slate-500 mt-1"
+            <span class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 mt-1"
                   data-i18n="logo_claim">Fatture semplici, offline e cloud</span>
           </div>
         </a>
 
         <!-- Desktop Nav Links -->
-        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
           <a href="#perche"
-             class="hover:text-teal-600 transition-colors"
+             class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
              data-i18n="nav_why">Perché Noi</a>
           <a href="#versioni"
-             class="hover:text-teal-600 transition-colors"
+             class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
              data-i18n="nav_versions">Offline vs Cloud</a>
           <a href="#community-richieste"
-             class="hover:text-teal-600 transition-colors text-teal-700 font-semibold"
+             class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors text-teal-700 dark:text-teal-400 font-semibold"
              data-i18n="nav_community">Richiedi Moduli (Gratis)</a>
           <a href="#faq"
-             class="hover:text-teal-600 transition-colors"
+             class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
              data-i18n="nav_faq">Domande Frequenti</a>
           <button onclick="openPrivacyModal()"
-                  class="hover:text-teal-600 text-left transition-colors flex items-center gap-1.5"
+                  class="hover:text-teal-600 dark:hover:text-teal-400 text-left transition-colors flex items-center gap-1.5"
                   data-i18n="nav_privacy">
             <span>Privacy & Normativa</span>
             <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
           </button>
         </nav>
 
-        <!-- Language Selector & Action -->
-        <div class="flex items-center gap-3">
+        <!-- Controls: Dark/Light Mode, Language & Action -->
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <!-- Dark/Light Mode Toggle Button -->
+          <button id="theme-toggle"
+                  onclick="toggleTheme()"
+                  aria-label="Cambia tema chiaro/scuro"
+                  class="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors">
+            <!-- Sun Icon (visibile in dark mode) -->
+            <svg id="theme-icon-light"
+                 class="w-5 h-5 hidden"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24">
+              <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+              </path>
+            </svg>
+            <!-- Moon Icon (visibile in light mode) -->
+            <svg id="theme-icon-dark"
+                 class="w-5 h-5"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24">
+              <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+          </button>
+
           <!-- Language Switcher -->
           <div
-               class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold text-slate-600">
+               class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">
             <button id="lang-it-btn"
                     onclick="setLanguage('it')"
                     class="px-2.5 py-1.5 rounded-lg transition-all duration-200 tab-active"
@@ -285,30 +302,25 @@
                     title="English">EN</button>
           </div>
 
-          <a href="#download"
-             class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-slate-900 hover:bg-teal-700 rounded-xl shadow-sm hover:shadow transition-all duration-200"
-             data-i18n="nav_cta">
-            Scarica Desktop Free
-          </a>
         </div>
       </div>
     </header>
 
     <!-- Hero Section -->
     <section id="hero"
-             class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-slate-100/70 via-white to-slate-50">
+             class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-slate-100/70 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200/60 dark:border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Top Market Badges -->
         <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
           <span
-                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-sm">
+                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span data-i18n="hero_badge_geo">Pronto per Italia 🇮🇹 (FatturaPA / SDI) & Svizzera 🇨🇭 (QR-Bill)</span>
           </span>
           <span
-                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-teal-50 text-teal-800 border border-teal-200">
-            <svg class="w-3.5 h-3.5 text-teal-600"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">
+            <svg class="w-3.5 h-3.5 text-teal-600 dark:text-teal-400"
                  fill="currentColor"
                  viewBox="0 0 20 20">
               <path fill-rule="evenodd"
@@ -321,12 +333,13 @@
 
         <!-- Main Headline -->
         <div class="text-center max-w-4xl mx-auto">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+          <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
             <span data-i18n="hero_title_part1">Fatturazione semplice, veloce e</span><br class="hidden sm:inline">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600"
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400"
                   data-i18n="hero_title_part2">sotto il tuo totale controllo.</span>
           </h1>
-          <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed"
+          <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed"
              data-i18n="hero_subtitle">
             Basta software contabili complessi ed esosi. Emetti fatture in 30 secondi dal tuo PC o chiavetta USB con
             SQLite, 100% gratuito e senza abbonamenti, oppure sfrutta la versione Cloud ospitata sul tuo server.
@@ -335,8 +348,8 @@
           <!-- CTA Buttons -->
           <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#download"
-               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
-              <svg class="w-5 h-5 text-teal-400"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
+              <svg class="w-5 h-5 text-teal-400 dark:text-slate-950"
                    fill="none"
                    stroke="currentColor"
                    viewBox="0 0 24 24">
@@ -348,8 +361,8 @@
               <span data-i18n="hero_cta_primary">Scarica Versione Desktop (Gratis)</span>
             </a>
             <a href="#versioni"
-               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-2xl shadow-sm hover:shadow transition-all duration-200">
-              <svg class="w-5 h-5 text-teal-600"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-sm hover:shadow transition-all duration-200">
+              <svg class="w-5 h-5 text-teal-600 dark:text-teal-400"
                    fill="none"
                    stroke="currentColor"
                    viewBox="0 0 24 24">
@@ -365,8 +378,10 @@
 
           <!-- Pillar highlights -->
           <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-            <div class="p-4 bg-white rounded-2xl border border-slate-200/70 shadow-sm flex items-start gap-3">
-              <div class="p-2 bg-emerald-50 rounded-xl text-emerald-600 shrink-0">
+            <div
+                 class="p-4 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-3">
+              <div
+                   class="p-2 bg-emerald-50 dark:bg-emerald-950/60 rounded-xl text-emerald-600 dark:text-emerald-400 shrink-0">
                 <svg class="w-5 h-5"
                      fill="none"
                      stroke="currentColor"
@@ -378,15 +393,16 @@
                 </svg>
               </div>
               <div>
-                <h4 class="text-xs font-bold text-slate-900 uppercase"
+                <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase"
                     data-i18n="p1_title">Zero Abbonamento</h4>
-                <p class="text-xs text-slate-500 mt-0.5"
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"
                    data-i18n="p1_desc">Desktop free per sempre</p>
               </div>
             </div>
 
-            <div class="p-4 bg-white rounded-2xl border border-slate-200/70 shadow-sm flex items-start gap-3">
-              <div class="p-2 bg-teal-50 rounded-xl text-teal-600 shrink-0">
+            <div
+                 class="p-4 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-3">
+              <div class="p-2 bg-teal-50 dark:bg-teal-950/60 rounded-xl text-teal-600 dark:text-teal-400 shrink-0">
                 <svg class="w-5 h-5"
                      fill="none"
                      stroke="currentColor"
@@ -399,15 +415,16 @@
                 </svg>
               </div>
               <div>
-                <h4 class="text-xs font-bold text-slate-900 uppercase"
+                <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase"
                     data-i18n="p2_title">Portabile su USB</h4>
-                <p class="text-xs text-slate-500 mt-0.5"
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"
                    data-i18n="p2_desc">Nessuna installazione</p>
               </div>
             </div>
 
-            <div class="p-4 bg-white rounded-2xl border border-slate-200/70 shadow-sm flex items-start gap-3">
-              <div class="p-2 bg-cyan-50 rounded-xl text-cyan-600 shrink-0">
+            <div
+                 class="p-4 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-3">
+              <div class="p-2 bg-cyan-50 dark:bg-cyan-950/60 rounded-xl text-cyan-600 dark:text-cyan-400 shrink-0">
                 <svg class="w-5 h-5"
                      fill="none"
                      stroke="currentColor"
@@ -420,15 +437,16 @@
                 </svg>
               </div>
               <div>
-                <h4 class="text-xs font-bold text-slate-900 uppercase"
+                <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase"
                     data-i18n="p3_title">100% Offline</h4>
-                <p class="text-xs text-slate-500 mt-0.5"
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"
                    data-i18n="p3_desc">Funziona senza internet</p>
               </div>
             </div>
 
-            <div class="p-4 bg-white rounded-2xl border border-slate-200/70 shadow-sm flex items-start gap-3">
-              <div class="p-2 bg-slate-100 rounded-xl text-slate-700 shrink-0">
+            <div
+                 class="p-4 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-3">
+              <div class="p-2 bg-slate-100 dark:bg-slate-700/60 rounded-xl text-slate-700 dark:text-slate-300 shrink-0">
                 <svg class="w-5 h-5"
                      fill="none"
                      stroke="currentColor"
@@ -441,9 +459,9 @@
                 </svg>
               </div>
               <div>
-                <h4 class="text-xs font-bold text-slate-900 uppercase"
+                <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase"
                     data-i18n="p4_title">I Tuoi Dati Sono Tuoi</h4>
-                <p class="text-xs text-slate-500 mt-0.5"
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"
                    data-i18n="p4_desc">Zero server intermediari</p>
               </div>
             </div>
@@ -455,17 +473,17 @@
 
     <!-- Filosofia & Valore -->
     <section id="perche"
-             class="py-20 bg-white border-y border-slate-200">
+             class="py-20 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center max-w-3xl mx-auto">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-teal-600"
+          <h2 class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
               data-i18n="why_badge">La filosofia di Fattura Facile</h2>
-          <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+          <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight"
              data-i18n="why_heading">
             Non un ERP complicato da 500 bottoni, ma il tuo strumento quotidiano
           </p>
-          <p class="mt-4 text-slate-600"
+          <p class="mt-4 text-slate-600 dark:text-slate-300"
              data-i18n="why_sub">
             Idraulici, elettricisti, installatori, giardinieri e liberi professionisti emettono in media 10-20 documenti
             al mese. Non hanno bisogno di gestire una supply chain complessa: hanno solo bisogno di farsi pagare
@@ -476,7 +494,7 @@
         <!-- Feature Grid -->
         <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
-               class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
+               class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
             <div
                  class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center mb-6 shadow-md shadow-teal-600/20">
               <svg class="w-6 h-6"
@@ -489,9 +507,9 @@
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-slate-900"
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white"
                 data-i18n="feat1_title">Preventivo in 1 minuto, Fattura in 1 click</h3>
-            <p class="mt-3 text-slate-600 text-sm leading-relaxed"
+            <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
                data-i18n="feat1_desc">
               Compila il preventivo mentre sei ancora dal cliente. Quando approvato, basta un solo click per convertirlo
               in fattura con numerazione automatica.
@@ -499,9 +517,9 @@
           </div>
 
           <div
-               class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
+               class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
             <div
-                 class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center mb-6 shadow-md shadow-slate-900/20">
+                 class="w-12 h-12 rounded-2xl bg-slate-900 dark:bg-teal-500 text-white dark:text-slate-950 flex items-center justify-center mb-6 shadow-md shadow-slate-900/20">
               <svg class="w-6 h-6"
                    fill="none"
                    stroke="currentColor"
@@ -513,9 +531,9 @@
                 </path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-slate-900"
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white"
                 data-i18n="feat2_title">Dual Market: Italia 🇮🇹 & Svizzera 🇨🇭</h3>
-            <p class="mt-3 text-slate-600 text-sm leading-relaxed"
+            <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
                data-i18n="feat2_desc">
               Supporto all'XML FatturaPA per il Sistema di Interscambio (SDI) italiano con PEC o Codice Destinatario, e
               modulo svizzero per l'emissione istantanea di QR-Bill con codice QR conforme e calcolo IVA CH.
@@ -523,7 +541,7 @@
           </div>
 
           <div
-               class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
+               class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
             <div
                  class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-6 shadow-md shadow-emerald-600/20">
               <svg class="w-6 h-6"
@@ -537,9 +555,9 @@
                 </path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-slate-900"
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white"
                 data-i18n="feat3_title">Backup Portatile Immediato</h3>
-            <p class="mt-3 text-slate-600 text-sm leading-relaxed"
+            <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
                data-i18n="feat3_desc">
               Basta un tasto per creare un archivio ZIP crittografato su chiavetta secondaria, NAS locale o cartella
               cloud. Zero rischio di perdere dati se cambi PC.
@@ -552,17 +570,17 @@
 
     <!-- Confronto Versioni -->
     <section id="versioni"
-             class="py-20 bg-slate-50">
+             class="py-20 bg-slate-50 dark:bg-slate-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-teal-600"
+          <h2 class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
               data-i18n="versions_badge">La Libertà di Scegliere</h2>
-          <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+          <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight"
              data-i18n="versions_heading">
             Due motori, 100% gratuiti per tutti
           </p>
-          <p class="mt-4 text-slate-600"
+          <p class="mt-4 text-slate-600 dark:text-slate-300"
              data-i18n="versions_sub">
             Nessun canone SaaS da versare a noi. Lavori in totale autonomia: in locale sulla tua scrivania oppure sul
             tuo server privato.
@@ -573,22 +591,22 @@
 
           <!-- Standalone Desktop -->
           <div
-               class="bg-white rounded-3xl p-8 sm:p-10 border-2 border-slate-200 shadow-sm flex flex-col justify-between">
+               class="bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-10 border-2 border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between">
-                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800 uppercase"
+                <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 uppercase"
                       data-i18n="box_desktop_tag">Standalone / USB</span>
-                <span class="text-emerald-600 font-bold text-sm"
+                <span class="text-emerald-600 dark:text-emerald-400 font-bold text-sm"
                       data-i18n="box_desktop_free">100% Gratuito</span>
               </div>
-              <h3 class="mt-4 text-2xl font-black text-slate-900"
+              <h3 class="mt-4 text-2xl font-black text-slate-900 dark:text-white"
                   data-i18n="box_desktop_title">Fattura Facile Desktop</h3>
-              <p class="mt-2 text-slate-600 text-sm"
+              <p class="mt-2 text-slate-600 dark:text-slate-300 text-sm"
                  data-i18n="box_desktop_sub">
                 Sviluppato in C#/.NET WPF nativo con database SQLite incorporato.
               </p>
 
-              <ul class="mt-8 space-y-3.5 text-sm text-slate-700">
+              <ul class="mt-8 space-y-3.5 text-sm text-slate-700 dark:text-slate-300">
                 <li class="flex items-start gap-3">
                   <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"
                        fill="none"
@@ -651,16 +669,16 @@
                           stroke-width="2"
                           d="M6 18L18 6M6 6l12 12"></path>
                   </svg>
-                  <span class="text-slate-500"
+                  <span class="text-slate-500 dark:text-slate-400"
                         data-i18n="box_desktop_lim">Singolo operatore per dispositivo (concorrenza file SQLite
                     locale).</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mt-8 pt-6 border-t border-slate-100">
+            <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
               <a href="#download"
-                 class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 transition-colors"
+                 class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-bold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                  data-i18n="box_desktop_btn">
                 Scarica Portable ZIP (Win 10/11)
               </a>
@@ -743,7 +761,7 @@
             </div>
 
             <div class="mt-8 pt-6 border-t border-slate-700">
-              <a href="https://github.com/davide-nava/FatturaFacile"
+              <a href="https://github.com/davide-nava/fattura-facile"
                  target="_blank"
                  rel="noopener noreferrer"
                  class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-bold text-slate-900 bg-teal-400 hover:bg-teal-300 transition-colors"
@@ -760,42 +778,46 @@
 
     <!-- Community Requests & Contact -->
     <section id="community-richieste"
-             class="py-20 bg-gradient-to-b from-teal-50/60 to-white border-b border-slate-200">
+             class="py-20 bg-gradient-to-b from-teal-50/60 to-white dark:from-slate-900 dark:to-slate-950 border-b border-slate-200 dark:border-slate-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl border-2 border-teal-500/40 p-8 sm:p-12 shadow-xl relative overflow-hidden">
+        <div
+             class="bg-white dark:bg-slate-900 rounded-3xl border-2 border-teal-500/40 p-8 sm:p-12 shadow-xl relative overflow-hidden">
 
           <div class="max-w-3xl">
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 text-teal-800"
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300"
                   data-i18n="custom_badge">
               Sviluppo Aperto & Gratuito
             </span>
-            <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+            <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight"
                 data-i18n="custom_title">
               Hai bisogno di una funzione specifica o di un modulo personalizzato?
             </h2>
-            <p class="mt-4 text-slate-600 leading-relaxed text-base sm:text-lg"
+            <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg"
                data-i18n="custom_desc">
               Scrivici all'indirizzo <a href="mailto:info@fatturafacile.eu"
-                 class="font-bold text-teal-700 hover:underline">info@fatturafacile.eu</a> per informazioni o per
-              descrivere le tue esigenze di lavoro. **Svilupperemo la funzionalità o il modulo su misura a costo zero
-              (GRATIS)** e lo integreremo direttamente nelle prossime versioni pubbliche per metterlo a disposizione di
-              tutti gli artigiani della community.
+                 class="font-bold text-teal-700 dark:text-teal-400 hover:underline">info@fatturafacile.eu</a> per
+              informazioni o per descrivere le tue esigenze di lavoro. **Svilupperemo la funzionalità o il modulo su
+              misura a costo zero (GRATIS)** e lo integreremo direttamente nelle prossime versioni pubbliche per
+              metterlo a disposizione di tutti gli artigiani della community.
             </p>
 
             <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80">
-                <div class="text-teal-600 font-extrabold text-lg">1. Scrivici</div>
-                <p class="text-xs text-slate-600 mt-1"
+              <div
+                   class="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200/80 dark:border-slate-700">
+                <div class="text-teal-600 dark:text-teal-400 font-extrabold text-lg">1. Scrivici</div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1"
                    data-i18n="custom_step1">Raccontaci il tuo flusso di lavoro e cosa ti serve.</p>
               </div>
-              <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80">
-                <div class="text-teal-600 font-extrabold text-lg">2. Sviluppo 0 €</div>
-                <p class="text-xs text-slate-600 mt-1"
+              <div
+                   class="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200/80 dark:border-slate-700">
+                <div class="text-teal-600 dark:text-teal-400 font-extrabold text-lg">2. Sviluppo 0 €</div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1"
                    data-i18n="custom_step2">Implementiamo il codice gratuitamente nel progetto .NET/WPF.</p>
               </div>
-              <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80">
-                <div class="text-teal-600 font-extrabold text-lg">3. Rilascio per Tutti</div>
-                <p class="text-xs text-slate-600 mt-1"
+              <div
+                   class="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200/80 dark:border-slate-700">
+                <div class="text-teal-600 dark:text-teal-400 font-extrabold text-lg">3. Rilascio per Tutti</div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1"
                    data-i18n="custom_step3">La nuova versione viene pubblicata su GitHub e su fatturafacile.eu.</p>
               </div>
             </div>
@@ -815,7 +837,7 @@
                 </svg>
                 <span data-i18n="custom_btn">Invia Email a info@fatturafacile.eu</span>
               </a>
-              <span class="text-xs text-slate-500 font-medium"
+              <span class="text-xs text-slate-500 dark:text-slate-400 font-medium"
                     data-i18n="custom_hint">Rispondiamo direttamente con il nostro team di sviluppo.</span>
             </div>
           </div>
@@ -826,24 +848,25 @@
 
     <!-- FAQ -->
     <section id="faq"
-             class="py-20 bg-slate-50">
+             class="py-20 bg-slate-50 dark:bg-slate-950">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-14">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-teal-600"
+          <h2 class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
               data-i18n="faq_badge">Chiarezza & Risposte</h2>
-          <p class="mt-2 text-3xl font-extrabold text-slate-900 tracking-tight"
+          <p class="mt-2 text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight"
              data-i18n="faq_heading">Domande Frequenti</p>
         </div>
 
         <div class="space-y-4"
              id="faq-container">
           <!-- FAQ Item 1 -->
-          <div class="border border-slate-200 bg-white rounded-2xl overflow-hidden shadow-sm">
-            <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none"
+          <div
+               class="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm">
+            <button class="w-full px-6 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center focus:outline-none"
                     onclick="toggleFaq(this)">
               <span data-i18n="faq_q1">Come funziona la versione su chiavetta USB? È davvero senza installazione?</span>
-              <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-200"
+              <svg class="faq-arrow w-5 h-5 text-teal-600 dark:text-teal-400 transform transition-transform duration-200"
                    fill="none"
                    stroke="currentColor"
                    viewBox="0 0 24 24">
@@ -853,7 +876,7 @@
                       d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-            <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+            <div class="faq-answer px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed hidden">
               <span data-i18n="faq_a1">Sì! Scarichi una cartella .ZIP, la estrai su qualsiasi chiavetta USB o hard disk
                 esterno e avvii l'eseguibile "FatturaFacile.exe". Il programma non scrive nel registro di sistema di
                 Windows e conserva il database SQLite e le fatture generate nella stessa chiavetta. Puoi collegarla a
@@ -862,11 +885,12 @@
           </div>
 
           <!-- FAQ Item 2 -->
-          <div class="border border-slate-200 bg-white rounded-2xl overflow-hidden shadow-sm">
-            <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none"
+          <div
+               class="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm">
+            <button class="w-full px-6 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center focus:outline-none"
                     onclick="toggleFaq(this)">
               <span data-i18n="faq_q2">Cosa succede se perdo la chiavetta o il computer si rompe?</span>
-              <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-200"
+              <svg class="faq-arrow w-5 h-5 text-teal-600 dark:text-teal-400 transform transition-transform duration-200"
                    fill="none"
                    stroke="currentColor"
                    viewBox="0 0 24 24">
@@ -876,7 +900,7 @@
                       d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-            <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+            <div class="faq-answer px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed hidden">
               <span data-i18n="faq_a2">Poiché i dati risiedono solo localmente per garantire la massima privacy, è
                 fondamentale fare backup. Fattura Facile include un pulsante automatico "Copia di sicurezza": con un
                 click puoi esportare l'intero database e i documenti in uno zip cifrato da salvare su Google Drive,
@@ -885,11 +909,12 @@
           </div>
 
           <!-- FAQ Item 3 -->
-          <div class="border border-slate-200 bg-white rounded-2xl overflow-hidden shadow-sm">
-            <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none"
+          <div
+               class="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm">
+            <button class="w-full px-6 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center focus:outline-none"
                     onclick="toggleFaq(this)">
               <span data-i18n="faq_q3">Come gestite la Fatturazione Elettronica italiana e la QR-Bill svizzera?</span>
-              <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-200"
+              <svg class="faq-arrow w-5 h-5 text-teal-600 dark:text-teal-400 transform transition-transform duration-200"
                    fill="none"
                    stroke="currentColor"
                    viewBox="0 0 24 24">
@@ -899,7 +924,7 @@
                       d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-            <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+            <div class="faq-answer px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed hidden">
               <span data-i18n="faq_a3">Per il mercato italiano, il software genera i file conformi XML FatturaPA
                 (standard AdE) che puoi firmare ed esportare, oppure trasmettere via SDI. Per il mercato svizzero,
                 supportiamo la generazione ufficiale delle sezioni pagamento con codice QR Svizzero (QR-Fattura)
@@ -908,11 +933,12 @@
           </div>
 
           <!-- FAQ Item 4 -->
-          <div class="border border-slate-200 bg-white rounded-2xl overflow-hidden shadow-sm">
-            <button class="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none"
+          <div
+               class="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm">
+            <button class="w-full px-6 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center focus:outline-none"
                     onclick="toggleFaq(this)">
               <span data-i18n="faq_q4">Come posso richiedere una personalizzazione per la mia attività?</span>
-              <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-200"
+              <svg class="faq-arrow w-5 h-5 text-teal-600 dark:text-teal-400 transform transition-transform duration-200"
                    fill="none"
                    stroke="currentColor"
                    viewBox="0 0 24 24">
@@ -922,7 +948,7 @@
                       d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-            <div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed hidden">
+            <div class="faq-answer px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed hidden">
               <span data-i18n="faq_a4">Basta inviare una mail a info@fatturafacile.eu descrivendo cosa vorresti (ad
                 esempio un campo specifico, un modello di stampa personalizzato, ecc.). Se è utile al settore, lo
                 programmiamo gratuitamente e lo rilasciamo nella nuova versione aperta a tutti.</span>
@@ -935,7 +961,7 @@
 
     <!-- Download Section -->
     <section id="download"
-             class="py-20 bg-slate-900 text-white relative overflow-hidden">
+             class="py-20 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30"
               data-i18n="dl_badge">Download Immediato</span>
@@ -948,7 +974,7 @@
         </p>
 
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://github.com/davide-nava/FatturaFacile/releases"
+          <a href="https://github.com/davide-nava/fattura-facile/releases"
              target="_blank"
              rel="noopener noreferrer"
              class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-extrabold rounded-2xl shadow-xl transition-all">
@@ -998,7 +1024,6 @@
               <span class="text-xl font-bold text-white tracking-tight">Fattura<span
                       class="text-teal-400">Facile</span></span>
             </div>
-            <!-- Claim del logo anche nel footer per consistenza -->
             <p class="text-xs font-semibold text-teal-400"
                data-i18n="logo_claim">Fatture semplici, offline e cloud</p>
             <p class="text-xs text-slate-400 leading-relaxed"
@@ -1030,7 +1055,7 @@
               <li><a href="#community-richieste"
                    class="hover:text-teal-400 transition-colors"
                    data-i18n="nav_community">Richiedi Moduli Gratuiti</a></li>
-              <li><a href="https://github.com/davide-nava/FatturaFacile"
+              <li><a href="https://github.com/davide-nava/fattura-facile"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="hover:text-white transition-colors">Repository GitHub</a></li>
@@ -1051,7 +1076,7 @@
               <li><button onclick="openPrivacyModal()"
                         class="hover:text-white transition-colors text-left"
                         data-i18n="foot_offline_priv">Architettura Privacy Offline</button></li>
-              <li><a href="https://github.com/davide-nava/FatturaFacile/blob/main/LICENSE"
+              <li><a href="https://github.com/davide-nava/fattura-facile/blob/main/LICENSE"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="hover:text-white transition-colors">Licenza Software</a></li>
@@ -1083,7 +1108,7 @@
             <button onclick="openPrivacyModal()"
                     class="hover:text-slate-300">Privacy Policy</button>
             <span>•</span>
-            <a href="https://github.com/davide-nava/FatturaFacile"
+            <a href="https://github.com/davide-nava/fattura-facile"
                target="_blank"
                rel="noopener noreferrer"
                class="hover:text-slate-300">GitHub</a>
@@ -1098,11 +1123,11 @@
     <!-- Modale Privacy GDPR & nLPD -->
     <div id="privacy-modal"
          class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200">
-      <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[88vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden transform scale-95 transition-transform duration-200"
+      <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full max-h-[88vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transform scale-95 transition-transform duration-200"
            id="privacy-dialog">
 
         <!-- Modal Header -->
-        <div class="px-6 py-5 bg-slate-900 text-white flex items-center justify-between">
+        <div class="px-6 py-5 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
           <div class="flex items-center gap-3">
             <div class="p-2 bg-teal-500/20 text-teal-400 rounded-xl">
               <svg class="w-6 h-6"
@@ -1135,24 +1160,26 @@
         </div>
 
         <!-- Modal Body (Scrollable) -->
-        <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-slate-700 text-sm leading-relaxed custom-scrollbar">
+        <div
+             class="p-6 sm:p-8 overflow-y-auto space-y-6 text-slate-700 dark:text-slate-300 text-sm leading-relaxed custom-scrollbar">
 
-          <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl text-teal-900 text-xs">
+          <div
+               class="p-4 bg-teal-50 dark:bg-teal-950/50 border border-teal-200 dark:border-teal-800 rounded-2xl text-teal-900 dark:text-teal-200 text-xs">
             <strong data-i18n="mod_callout_title">Principio Fondamentale:</strong> <span data-i18n="mod_callout_desc">In
               Fattura Facile la privacy non è una casella da spuntare, ma la premessa ingegneristica dell'intero
               software.</span>
           </div>
 
           <div>
-            <h4 class="text-base font-bold text-slate-900 flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+            <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-teal-600 dark:text-teal-400"></span>
               <span data-i18n="mod_sec1_title">1. Versione Desktop Standalone (SQLite locale)</span>
             </h4>
-            <p class="mt-2 text-slate-600"
+            <p class="mt-2 text-slate-600 dark:text-slate-300"
                data-i18n="mod_sec1_text">
               Quando utilizzi la versione Desktop scaricabile da chiavetta USB:
             </p>
-            <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600">
+            <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600 dark:text-slate-400">
               <li data-i18n="mod_sec1_b1"><strong>Zero trasmissione dati:</strong> I dati di fatturazione, anagrafiche
                 clienti, importi e coordinate bancarie rimangono esclusivamente salvati nel file SQLite sul tuo disco
                 rigido o chiavetta USB.</li>
@@ -1166,15 +1193,15 @@
           </div>
 
           <div>
-            <h4 class="text-base font-bold text-slate-900 flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+            <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-teal-600 dark:text-teal-400"></span>
               <span data-i18n="mod_sec2_title">2. Versione Cloud Self-Hosted (Hosting a carico dell'utente)</span>
             </h4>
-            <p class="mt-2 text-slate-600"
+            <p class="mt-2 text-slate-600 dark:text-slate-300"
                data-i18n="mod_sec2_text">
               Anche scegliendo la variante multi-utente in rete:
             </p>
-            <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600">
+            <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600 dark:text-slate-400">
               <li data-i18n="mod_sec2_b1"><strong>Infrastruttura proprietaria del cliente:</strong> Il software viene
                 installato sul tuo server, VPS o NAS. Noi non abbiamo accesso ai tuoi archivi.</li>
               <li data-i18n="mod_sec2_b2"><strong>Conformità totale:</strong> Tutti gli obblighi GDPR e nLPD restano
@@ -1186,11 +1213,11 @@
           </div>
 
           <div>
-            <h4 class="text-base font-bold text-slate-900 flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+            <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-teal-600 dark:text-teal-400"></span>
               <span data-i18n="mod_sec3_title">3. Diritti dell'Interessato</span>
             </h4>
-            <p class="mt-2 text-slate-600"
+            <p class="mt-2 text-slate-600 dark:text-slate-300"
                data-i18n="mod_sec3_text">
               Ai sensi degli articoli 15-22 del Regolamento UE 2016/679 (GDPR) e degli artt. 25-29 della Nuova Legge
               Federale sulla Protezione dei Dati svizzera (nLPD), gli interessati possono richiedere in qualsiasi
@@ -1202,9 +1229,10 @@
         </div>
 
         <!-- Modal Footer -->
-        <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+        <div
+             class="px-6 py-4 bg-slate-50 dark:bg-slate-800/80 border-t border-slate-200 dark:border-slate-800 flex justify-end">
           <button onclick="closePrivacyModal()"
-                  class="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-sm transition-colors"
+                  class="px-6 py-2.5 bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 text-white font-bold rounded-xl text-sm transition-colors"
                   data-i18n="mod_close_btn">
             Ho Compreso
           </button>
@@ -1213,334 +1241,11 @@
       </div>
     </div>
 
-    <!-- Notification Toast Container -->
-    <div id="toast"
-         class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-      <div class="p-1 bg-teal-500 rounded-lg text-slate-950">
-        <svg class="w-4 h-4"
-             fill="none"
-             stroke="currentColor"
-             viewBox="0 0 24 24">
-          <path stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path>
-        </svg>
-      </div>
-      <span id="toast-text"
-            class="text-sm font-medium">Operazione completata</span>
-    </div>
-
-    <script>
-      // Dizionario bilingue completo IT / EN
-      const translations = {
-        it: {
-          logo_claim: "Fatture semplici, offline e cloud",
-          nav_why: "Perché Noi",
-          nav_versions: "Offline vs Cloud",
-          nav_community: "Richiedi Moduli (Gratis)",
-          nav_faq: "Domande Frequenti",
-          nav_privacy: "Privacy & Normativa",
-          nav_cta: "Scarica Desktop Free",
-
-          hero_badge_geo: "Pronto per Italia 🇮🇹 (FatturaPA / SDI) & Svizzera 🇨🇭 (QR-Bill)",
-          hero_badge_privacy: "Privacy Compliant: GDPR UE & nLPD Svizzera",
-          hero_title_part1: "Fatturazione semplice, veloce e",
-          hero_title_part2: "sotto il tuo totale controllo.",
-          hero_subtitle: "Basta software contabili sovradimensionati e lenti. Emetti fatture in 30 secondi dal tuo PC o chiavetta USB con SQLite, 100% gratuito e senza abbonamenti, oppure sfrutta la versione Cloud ospitata sul tuo server.",
-          hero_cta_primary: "Scarica Versione Desktop (Gratis)",
-          hero_cta_secondary: "Scopri la Soluzione Cloud",
-
-          p1_title: "Zero Abbonamento",
-          p1_desc: "Desktop free per sempre",
-          p2_title: "Portabile su USB",
-          p2_desc: "Nessuna installazione",
-          p3_title: "100% Offline",
-          p3_desc: "Funziona senza internet",
-          p4_title: "I Tuoi Dati Sono Tuoi",
-          p4_desc: "Zero server intermediari",
-
-          why_badge: "La filosofia di Fattura Facile",
-          why_heading: "Non un ERP complicato da 500 bottoni, ma il tuo strumento quotidiano",
-          why_sub: "Idraulici, elettricisti, installatori, giardinieri e liberi professionisti emettono in media 10-20 documenti al mese. Non hanno bisogno di gestire la logistica complessa, hanno bisogno di farsi pagare puntuali.",
-          feat1_title: "Preventivo in 1 minuto, Fattura in 1 click",
-          feat1_desc: "Compila il preventivo mentre sei ancora dal cliente. Quando approvato, basta un solo click per convertirlo in fattura proforma o definitiva con numerazione automatica progressiva.",
-          feat2_title: "Dual Market: Italia 🇮🇹 & Svizzera 🇨🇭",
-          feat2_desc: "Supporto all'XML FatturaPA per il Sistema di Interscambio (SDI) italiano con PEC o Codice Destinatario, e modulo svizzero per l'emissione istantanea di QR-Bill con codice QR conforme e calcolo IVA CH.",
-          feat3_title: "Backup Portatile Immediato",
-          feat3_desc: "Basta un tasto per creare un archivio ZIP crittografato su chiavetta secondaria, NAS locale o cartella sincronizzata. Zero rischio di perdere fatture se cambi PC o si guasta l'hard disk.",
-
-          versions_badge: "La Libertà di Scegliere",
-          versions_heading: "Due motori, 100% gratuiti per tutti",
-          versions_sub: "Nessun canone SaaS da versare a noi. Lavori in totale autonomia: in locale sulla tua scrivania oppure sul tuo server privato.",
-          box_desktop_tag: "Standalone / USB",
-          box_desktop_free: "100% Gratuito",
-          box_desktop_title: "Fattura Facile Desktop",
-          box_desktop_sub: "Sviluppato in C#/.NET WPF nativo con database SQLite incorporato.",
-          box_desktop_f1: "<strong>Zero installazione:</strong> cartella portabile su chiavetta USB o SSD esterno.",
-          box_desktop_f2: "<strong>Totale isolamento dati:</strong> nessun dato fiscale lascia il tuo computer (Privacy By Design).",
-          box_desktop_f3: "<strong>Funziona ovunque:</strong> in cantiere, in furgone o in officina senza connessione internet.",
-          box_desktop_f4: "<strong>Velocità istantanea:</strong> tempi di avvio e salvataggio inferiori a 1 secondo.",
-          box_desktop_lim: "Singolo operatore per dispositivo (concorrenza file SQLite locale).",
-          box_desktop_btn: "Scarica Portable ZIP (Win 10/11)",
-
-          box_cloud_tag: "Multi-Utente & Self-Hosted",
-          box_cloud_fee: "Software Gratuito (Hosting a tuo carico)",
-          box_cloud_title: "Fattura Facile Cloud Privato",
-          box_cloud_sub: "Da ospitare sulla tua VPS, cloud o server aziendale (Docker / SQL Server o PostgreSQL).",
-          box_cloud_f1: "<strong>Accesso multi-utente contemporaneo:</strong> collaboratori e commercialista collegati in rete.",
-          box_cloud_f2: "<strong>Zero costi di licenza o tenant:</strong> nessun abbonamento o canone SaaS a noi dovuto.",
-          box_cloud_f3: "<strong>Sovranità legale e Privacy:</strong> gestisci tu l'infrastruttura, quindi nessun rischio di DPA o data processor terzi.",
-          box_cloud_f4: "<strong>Migrazione 1-Click:</strong> importi il file SQLite desktop direttamente nel database cloud.",
-          box_cloud_btn: "Consulta Guida Self-Hosted (GitHub)",
-
-          custom_badge: "Sviluppo Aperto & Gratuito",
-          custom_title: "Hai bisogno di una funzione specifica o di un modulo personalizzato?",
-          custom_desc: "Scrivici all'indirizzo <a href='mailto:info@fatturafacile.eu' class='font-bold text-teal-700 hover:underline'>info@fatturafacile.eu</a> per informazioni o per descrivere le tue esigenze di lavoro. **Svilupperemo la funzionalità o il modulo su misura a costo zero (GRATIS)** e lo integreremo direttamente nelle prossime versioni pubbliche per metterlo a disposizione di tutti gli artigiani della community.",
-          custom_step1: "Raccontaci il tuo flusso di lavoro e cosa ti serve.",
-          custom_step2: "Implementiamo il codice gratuitamente nel progetto .NET/WPF.",
-          custom_step3: "La nuova versione viene pubblicata su GitHub e su fatturafacile.eu.",
-          custom_btn: "Invia Email a info@fatturafacile.eu",
-          custom_hint: "Rispondiamo direttamente con il nostro team di sviluppo.",
-
-          faq_badge: "Chiarezza & Risposte",
-          faq_heading: "Domande Frequenti",
-          faq_q1: "Come funziona la versione su chiavetta USB? È davvero senza installazione?",
-          faq_a1: "Sì! Scarichi una cartella .ZIP, la estrai su qualsiasi chiavetta USB o hard disk esterno e avvii l'eseguibile 'FatturaFacile.exe'. Il programma non scrive nel registro di sistema di Windows e conserva il database SQLite e le fatture generate nella stessa chiavetta. Puoi collegarla a qualsiasi PC con Windows 10 o Windows 11 e continuare a lavorare.",
-          faq_q2: "Cosa succede se perdo la chiavetta o il computer si rompe?",
-          faq_a2: "Poiché i dati risiedono solo localmente per garantire la massima privacy, è fondamentale fare backup. Fattura Facile include un pulsante automatico 'Copia di sicurezza': con un click puoi esportare l'intero database e i documenti in uno zip cifrato da salvare su Google Drive, OneDrive, NAS o inviarti via email.",
-          faq_q3: "Come gestite la Fatturazione Elettronica italiana e la QR-Bill svizzera?",
-          faq_a3: "Per il mercato italiano, il software genera i file conformi XML FatturaPA (standard AdE) che puoi firmare ed esportare, oppure trasmettere via SDI. Per il mercato svizzero, supportiamo la generazione ufficiale delle sezioni pagamento con codice QR Svizzero (QR-Fattura) conforme alle direttive SIX Interbank Clearing.",
-          faq_q4: "Come posso richiedere una personalizzazione per la mia attività?",
-          faq_a4: "Basta inviare una mail a info@fatturafacile.eu descrivendo cosa vorresti (ad esempio un campo specifico, un modello di stampa personalizzato, ecc.). Se è utile al settore, lo programmiamo gratuitamente e lo rilasciamo nella nuova versione aperta a tutti.",
-
-          dl_badge: "Download Immediato",
-          dl_title: "Inizia subito a fatturare in modo semplice",
-          dl_sub: "Scarica il pacchetto portatile gratuito per Windows. Nessun inserimento di carta di credito, nessuna registrazione obbligatoria.",
-          dl_btn_github: "Scarica Release v1.0 (GitHub)",
-          dl_btn_compliance: "Consulta Scheda Privacy & Compliance",
-
-          foot_desc: "Il software di fatturazione concepito specificamente per artigiani e microimprese italiane e svizzere. Sviluppato con architettura locale SQLite e opzione Self-Hosted.",
-          foot_col_prod: "Prodotto",
-          foot_col_legal: "Privacy & Normative",
-          foot_col_geo: "Mercati Serviti",
-          foot_gdpr: "Informativa GDPR (Reg. UE 2016/679)",
-          foot_nlpd: "Conformità nLPD Svizzera",
-          foot_offline_priv: "Architettura Privacy Offline",
-
-          mod_title: "Informativa Privacy & Conformità Normativa",
-          mod_sub: "GDPR (Regolamento UE 2016/679) & nLPD (Legge Federale Svizzera)",
-          mod_callout_title: "Principio Fondamentale:",
-          mod_callout_desc: "In Fattura Facile la privacy non è una casella da spuntare, ma la premessa ingegneristica dell'intero software.",
-          mod_sec1_title: "1. Versione Desktop Standalone (SQLite locale)",
-          mod_sec1_text: "Quando utilizzi la versione Desktop scaricabile da chiavetta USB:",
-          mod_sec1_b1: "<strong>Zero trasmissione dati:</strong> I dati di fatturazione, anagrafiche clienti, importi e coordinate bancarie rimangono esclusivamente salvati nel file SQLite sul tuo disco rigido o chiavetta USB.",
-          mod_sec1_b2: "<strong>Nessun server intermedio:</strong> Non inviamo telemetria, non raccogliamo le tue fatture e non effettuiamo profiling.",
-          mod_sec1_b3: "<strong>Ruolo privacy:</strong> L'utilizzatore è il Titolare autonomo del trattamento dei dati dei propri clienti. Non sussiste alcun trasferimento transfrontaliero né necessità di nomina a Responsabile del Trattamento (DPA) nei confronti dello sviluppatore per la versione locale.",
-          mod_sec2_title: "2. Versione Cloud Self-Hosted (Hosting a carico dell'utente)",
-          mod_sec2_text: "Anche scegliendo la variante multi-utente in rete:",
-          mod_sec2_b1: "<strong>Infrastruttura proprietaria del cliente:</strong> Il software viene installato sul tuo server, VPS o NAS. Noi non abbiamo accesso ai tuoi archivi.",
-          mod_sec2_b2: "<strong>Conformità totale:</strong> Tutti gli obblighi GDPR e nLPD restano interamente sotto la tua gestione diretta, azzerando qualsiasi rischio di data breach su server terzi.",
-          mod_sec2_b3: "<strong>Contatti diretti:</strong> Per qualsiasi quesito tecnico o proposta di modulo: info@fatturafacile.eu.",
-          mod_sec3_title: "3. Diritti dell'Interessato",
-          mod_sec3_text: "Ai sensi degli articoli 15-22 del Regolamento UE 2016/679 (GDPR) e degli artt. 25-29 della Nuova Legge Federale sulla Protezione dei Dati svizzera (nLPD), gli interessati possono richiedere in qualsiasi momento l'accesso, la rettifica, la portabilità in formato aperto o la cancellazione integrale dei propri dati. Nella versione Desktop, hai già il pieno possesso fisico e matematico del file .db.",
-          mod_close_btn: "Ho Compreso"
-        },
-        en: {
-          logo_claim: "Simple invoices, offline & cloud",
-          nav_why: "Why Us",
-          nav_versions: "Offline vs Cloud",
-          nav_community: "Request Features (Free)",
-          nav_faq: "FAQ",
-          nav_privacy: "Privacy & Compliance",
-          nav_cta: "Get Free Desktop",
-
-          hero_badge_geo: "Tailored for Italy 🇮🇹 (FatturaPA / SDI) & Switzerland 🇨🇭 (QR-Bill)",
-          hero_badge_privacy: "Privacy Compliant: EU GDPR & Swiss nLPA / FADP",
-          hero_title_part1: "Invoicing made simple, quick and",
-          hero_title_part2: "under your complete control.",
-          hero_subtitle: "Stop struggling with bloated and slow ERP software. Issue invoices in 30 seconds straight from your PC or USB thumb drive with local SQLite, 100% free with no monthly subscriptions, or host your own multi-user private cloud.",
-          hero_cta_primary: "Download Desktop Edition (Free)",
-          hero_cta_secondary: "Explore Self-Hosted Cloud",
-
-          p1_title: "Zero Subscription",
-          p1_desc: "Desktop free forever",
-          p2_title: "Portable on USB",
-          p2_desc: "No installation required",
-          p3_title: "100% Offline",
-          p3_desc: "Works without Internet",
-          p4_title: "Your Data is Yours",
-          p4_desc: "No intermediary servers",
-
-          why_badge: "The Fattura Facile Philosophy",
-          why_heading: "Not a 500-button monster ERP, but your lightweight everyday companion",
-          why_sub: "Electricians, plumbers, installers, landscapers and solo freelancers issue an average of 10-20 invoices a month. They don't need supply chain overhead, they just need to get paid promptly.",
-          feat1_title: "Estimate in 1 minute, Invoice in 1 click",
-          feat1_desc: "Draft quotes right on the job. Once the client approves, convert it into an official invoice in a single click with sequential numbering.",
-          feat2_title: "Dual Market: Italy 🇮🇹 & Switzerland 🇨🇭",
-          feat2_desc: "Built-in support for Italian FatturaPA electronic XML (SDI via PEC or recipient code) as well as the Swiss QR-Bill standard with valid QR payment codes and VAT calculations.",
-          feat3_title: "One-Click Portable Backup",
-          feat3_desc: "Create encrypted ZIP snapshots onto a secondary flash drive, local network NAS, or synced folder. Never lose an invoice even if you replace your computer.",
-
-          versions_badge: "Freedom of Choice",
-          versions_heading: "Two engines, 100% free for everyone",
-          versions_sub: "No SaaS subscription fees to pay us. Work in total autonomy: offline on your desk or self-hosted on your private infrastructure.",
-          box_desktop_tag: "Standalone / USB",
-          box_desktop_free: "100% Free",
-          box_desktop_title: "Fattura Facile Desktop",
-          box_desktop_sub: "Engineered in native C#/.NET WPF with an embedded zero-configuration SQLite database.",
-          box_desktop_f1: "<strong>Zero installation:</strong> portable folder on any USB drive or external SSD.",
-          box_desktop_f2: "<strong>Total data privacy:</strong> zero financial data leaves your PC (Privacy by Design).",
-          box_desktop_f3: "<strong>Works anywhere:</strong> on job sites, in vans or workshops without Wi-Fi.",
-          box_desktop_f4: "<strong>Instant speed:</strong> sub-second boot times and immediate record saving.",
-          box_desktop_lim: "Single concurrent operator per file (local SQLite file lock constraint).",
-          box_desktop_btn: "Download Portable ZIP (Win 10/11)",
-
-          box_cloud_tag: "Multi-User & Self-Hosted",
-          box_cloud_fee: "Free Software (Hosting managed by you)",
-          box_cloud_title: "Fattura Facile Private Cloud",
-          box_cloud_sub: "Host it on your VPS, company server or home NAS (Docker / SQL Server or PostgreSQL).",
-          box_cloud_f1: "<strong>Concurrent multi-user access:</strong> team members and accountants connected together.",
-          box_cloud_f2: "<strong>Zero license or tenant fees:</strong> no SaaS subscription fees paid to us.",
-          box_cloud_f3: "<strong>Legal sovereignty:</strong> since you control the infrastructure, there are no third-party processor liabilities.",
-          box_cloud_f4: "<strong>1-Click Migration:</strong> easily import your local SQLite file directly to the cloud instance.",
-          box_cloud_btn: "View Self-Hosted Guide (GitHub)",
-
-          custom_badge: "Community-Driven & 100% Free",
-          custom_title: "Need a specific feature or custom module?",
-          custom_desc: "Email us at <a href='mailto:info@fatturafacile.eu' class='font-bold text-teal-700 hover:underline'>info@fatturafacile.eu</a> with your questions or workflow requirements. **We will build the custom feature or module completely FREE of charge** and include it in upcoming open releases so everyone in the community benefits.",
-          custom_step1: "Explain your workflow and what feature you need.",
-          custom_step2: "We develop the code free of charge in the .NET/WPF project.",
-          custom_step3: "The new release is published on GitHub and fatturafacile.eu for all.",
-          custom_btn: "Email info@fatturafacile.eu",
-          custom_hint: "Direct answers from our core development team.",
-
-          faq_badge: "Answers & Clarity",
-          faq_heading: "Frequently Asked Questions",
-          faq_q1: "How does the USB drive version work? Is it really portable without installing?",
-          faq_a1: "Yes! Simply download the .ZIP folder, extract it to any USB stick or portable SSD, and double-click 'FatturaFacile.exe'. The software does not modify Windows system registries and stores all documents in the local SQLite database on the drive itself. Plug it into any Windows 10 or 11 computer and resume working.",
-          faq_q2: "What happens if I lose the flash drive or my PC breaks down?",
-          faq_a2: "Because your data remains strictly local for privacy, regular backups are essential. Fattura Facile includes a single-click 'Create Backup' feature that packages your data into an encrypted ZIP file you can copy to OneDrive, Google Drive, an office NAS, or email to yourself.",
-          faq_q3: "How do you handle Italian Electronic Invoicing and Swiss QR-Bills?",
-          faq_a3: "For Italy, the app generates certified FatturaPA XML files for the Revenue Agency (SDI) with digital signature support and transmission options. For Switzerland, it formats official Swiss QR-Bills compliant with SIX Interbank Clearing specifications.",
-          faq_q4: "How can I request custom features for my specific trade?",
-          faq_a4: "Just email info@fatturafacile.eu with your ideas (e.g. customized fields, specific print templates, etc.). If it benefits users, we develop it free of charge and roll it into the next official open release.",
-
-          dl_badge: "Direct Download",
-          dl_title: "Start invoicing the easy way today",
-          dl_sub: "Download the free portable Windows package. No credit card required, no account setup needed.",
-          dl_btn_github: "Download Release v1.0 (GitHub)",
-          dl_btn_compliance: "Review Privacy & Compliance Sheet",
-
-          foot_desc: "The lightweight invoicing system created specifically for Italian and Swiss tradespeople and micro-businesses. Built with local SQLite architecture and self-hosted cloud option.",
-          foot_col_prod: "Product",
-          foot_col_legal: "Privacy & Legal",
-          foot_col_geo: "Regional Markets",
-          foot_gdpr: "GDPR Compliance (EU 2016/679)",
-          foot_nlpd: "Swiss nLPA / FADP Compliance",
-          foot_offline_priv: "Offline Privacy Architecture",
-
-          mod_title: "Privacy Policy & Regulatory Compliance",
-          mod_sub: "EU GDPR (Regulation 2016/679) & Swiss nLPA / FADP",
-          mod_callout_title: "Core Engineering Principle:",
-          mod_callout_desc: "At Fattura Facile, privacy isn't a legal afterthought; it's the architectural foundation of our software.",
-          mod_sec1_title: "1. Standalone Desktop Version (Local SQLite)",
-          mod_sec1_text: "When utilizing the USB portable Desktop version:",
-          mod_sec1_b1: "<strong>Zero Data Transmission:</strong> Billing records, customer databases, tax IDs, and bank account numbers are stored exclusively inside the local SQLite file on your device.",
-          mod_sec1_b2: "<strong>No Intermediary Servers:</strong> We do not collect telemetry, track usage, or harvest invoice information.",
-          mod_sec1_b3: "<strong>Privacy Governance:</strong> The business user acts as the sole Data Controller. No cross-border data transfer occurs and no Data Processing Agreement (DPA) with us is necessary for local usage.",
-          mod_sec2_title: "2. Self-Hosted Cloud Version (Hosting managed by client)",
-          mod_sec2_text: "Even when running the networked edition:",
-          mod_sec2_b1: "<strong>Client's Own Infrastructure:</strong> The system is deployed on your private servers or VPS. We have zero access to your database.",
-          mod_sec2_b2: "<strong>Direct Compliance:</strong> All GDPR and nLPA compliance aspects remain entirely within your internal control, avoiding third-party data breaches.",
-          mod_sec2_b3: "<strong>Direct contact:</strong> For questions or module requests: info@fatturafacile.eu.",
-          mod_sec3_title: "3. Data Subject Rights",
-          mod_sec3_text: "Under Articles 15-22 of EU GDPR and Articles 25-29 of the Swiss nLPA, individuals retain full rights of access, rectification, portability, and deletion. In the Desktop edition, you already possess full direct ownership of your raw database.",
-          mod_close_btn: "Understood"
-        }
-      };
-
-      let currentLanguage = 'it';
-
-      // Funzione per impostare la lingua
-      function setLanguage(lang) {
-        if (!translations[lang]) return;
-        currentLanguage = lang;
-
-        // Aggiorna attributo HTML
-        document.documentElement.lang = lang;
-
-        // Aggiorna classi bottoni
-        const itBtn = document.getElementById('lang-it-btn');
-        const enBtn = document.getElementById('lang-en-btn');
-        if (lang === 'it') {
-          itBtn.classList.add('tab-active');
-          enBtn.classList.remove('tab-active');
-        } else {
-          enBtn.classList.add('tab-active');
-          itBtn.classList.remove('tab-active');
-        }
-
-        // Sostituisci tutte le stringhe con data-i18n
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-          }
-        });
-      }
-
-      // Toggle Accordion FAQ
-      function toggleFaq(button) {
-        const content = button.nextElementSibling;
-        const arrow = button.querySelector('svg');
-        const isHidden = content.classList.contains('hidden');
-
-        // Chiudi altri accordion aperti
-        document.querySelectorAll('#faq-container .px-6.pb-5').forEach(el => el.classList.add('hidden'));
-        document.querySelectorAll('#faq-container svg').forEach(el => el.classList.remove('rotate-180'));
-
-        if (isHidden) {
-          content.classList.remove('hidden');
-          arrow.classList.add('rotate-180');
-        }
-      }
-
-      // Gestione Modale Privacy
-      function openPrivacyModal() {
-        const modal = document.getElementById('privacy-modal');
-        const dialog = document.getElementById('privacy-dialog');
-        modal.classList.remove('hidden');
-        setTimeout(() => {
-          modal.classList.remove('opacity-0');
-          dialog.classList.remove('scale-95');
-          dialog.classList.add('scale-100');
-        }, 10);
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closePrivacyModal() {
-        const modal = document.getElementById('privacy-modal');
-        const dialog = document.getElementById('privacy-dialog');
-        modal.classList.add('opacity-0');
-        dialog.classList.remove('scale-100');
-        dialog.classList.add('scale-95');
-        setTimeout(() => {
-          modal.classList.add('hidden');
-          document.body.style.overflow = '';
-        }, 200);
-      }
-
-      // Chiudi modale cliccando fuori
-      document.getElementById('privacy-modal').addEventListener('click', function (e) {
-        if (e.target === this) {
-          closePrivacyModal();
-        }
-      });
-
-      // Anno footer dinamico
-      document.getElementById('year-span').textContent = new Date().getFullYear();
-    </script>
+    <!-- Script Esterni Caricati con defer -->
+    <script src="js/translations.js"
+            defer></script>
+    <script src="js/main.js"
+            defer></script>
   </body>
 
 </html>
