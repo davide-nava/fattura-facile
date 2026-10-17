@@ -16,6 +16,7 @@
                 Fattura<span class="text-teal-600 dark:text-teal-400">Facile</span>
             </span>
             <span class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 mt-1">{{ __('Fatture semplici, offline e cloud') }}</span>
+            <span class="sr-only">Fatture semplici, offline e cloud</span>
         </div>
     </a>
 @endif

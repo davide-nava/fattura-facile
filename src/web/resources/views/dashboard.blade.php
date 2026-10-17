@@ -34,8 +34,9 @@
                     </svg>
                     <span>{{ __('CRM & Customers') }}</span>
                 </a>
-                <a href="{{ url('/admin') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 hover:bg-teal-100 dark:hover:bg-teal-900/60 border border-teal-200 dark:border-teal-800/60 rounded-xl transition-all duration-200">
+                <a href="{{ url('/admin') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 hover:bg-teal-100 dark:hover:bg-teal-900/60 border border-teal-200 dark:border-teal-800/60 rounded-xl transition-all duration-200" title="{{ __('Pannello Gestionale') }}">
                     <span>{{ __('ERP Panel') }}</span>
+                    <span class="sr-only">Pannello Gestionale</span>
                 </a>
             </div>
         </div>

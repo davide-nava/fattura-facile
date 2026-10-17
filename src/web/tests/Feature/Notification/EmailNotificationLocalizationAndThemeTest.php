@@ -21,7 +21,7 @@ class EmailNotificationLocalizationAndThemeTest extends TestCase
         $this->assertFileExists(resource_path('views/vendor/notifications/email.blade.php'));
         $this->assertFileExists(resource_path('views/vendor/notifications/css/email.css'));
         $this->assertFileExists(resource_path('views/emails/verify-email.blade.php'));
-        $this->assertFileExists(public_path('https://fatturafacile.eu/img/logo-email.png'));
+        $this->assertFileExists(public_path('images/logo.png'));
     }
 
     public function test_email_css_contains_dark_and_light_mode_color_schemes(): void

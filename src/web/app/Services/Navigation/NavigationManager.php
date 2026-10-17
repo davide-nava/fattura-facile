@@ -30,7 +30,7 @@ class NavigationManager implements NavigationManagerInterface
                 key: 'menu.sales',
                 icon: 'fa-solid fa-file-invoice-dollar',
                 url: '/admin/invoices',
-                activePatterns: ['admin/invoices*', 'admin/customers*', 'portal/quotes*', 'portal/invoices*'],
+                activePatterns: ['admin/invoices*', 'admin/customers*', 'admin/quotes*', 'portal/quotes*', 'portal/invoices*'],
                 children: [
                     new MenuItem(
                         key: 'menu.sales_customers',
@@ -42,9 +42,9 @@ class NavigationManager implements NavigationManagerInterface
                     new MenuItem(
                         key: 'menu.sales_quotations',
                         icon: 'fa-solid fa-file-lines',
-                        route: 'portal.quotes',
-                        url: '/portal/quotes',
-                        activePatterns: ['portal/quotes*'],
+                        route: 'filament.admin.resources.quotes.index',
+                        url: '/admin/quotes',
+                        activePatterns: ['admin/quotes*', 'portal/quotes*'],
                     ),
                     new MenuItem(
                         key: 'menu.sales_invoices',
@@ -73,12 +73,14 @@ class NavigationManager implements NavigationManagerInterface
                     new MenuItem(
                         key: 'menu.purchases_orders',
                         icon: 'fa-solid fa-clipboard-list',
+                        route: 'filament.admin.resources.purchase-orders.index',
                         url: '/admin/purchase-orders',
                         activePatterns: ['admin/purchase-orders*'],
                     ),
                     new MenuItem(
                         key: 'menu.purchases_bills',
                         icon: 'fa-solid fa-receipt',
+                        route: 'filament.admin.resources.vendor-bills.index',
                         url: '/admin/vendor-bills',
                         activePatterns: ['admin/vendor-bills*'],
                     ),
@@ -109,6 +111,7 @@ class NavigationManager implements NavigationManagerInterface
                     new MenuItem(
                         key: 'menu.warehouse_movements',
                         icon: 'fa-solid fa-dolly',
+                        route: 'filament.admin.resources.stock-movements.index',
                         url: '/admin/stock-movements',
                         activePatterns: ['admin/stock-movements*'],
                     ),
@@ -125,6 +128,7 @@ class NavigationManager implements NavigationManagerInterface
                     new MenuItem(
                         key: 'menu.accounting_chart',
                         icon: 'fa-solid fa-book-bookmark',
+                        route: 'filament.admin.resources.chart-of-accounts.index',
                         url: '/admin/chart-of-accounts',
                         activePatterns: ['admin/chart-of-accounts*'],
                     ),
@@ -138,6 +142,7 @@ class NavigationManager implements NavigationManagerInterface
                     new MenuItem(
                         key: 'menu.accounting_reconciliation',
                         icon: 'fa-solid fa-building-columns',
+                        route: 'filament.admin.pages.bank-reconciliation',
                         url: '/admin/bank-reconciliation',
                         activePatterns: ['admin/bank-reconciliation*'],
                     ),
@@ -154,18 +159,21 @@ class NavigationManager implements NavigationManagerInterface
                     new MenuItem(
                         key: 'menu.hr_employees',
                         icon: 'fa-solid fa-id-card',
+                        route: 'filament.admin.pages.hr.employees',
                         url: '/admin/hr/employees',
                         activePatterns: ['admin/hr/employees*'],
                     ),
                     new MenuItem(
                         key: 'menu.hr_attendance',
                         icon: 'fa-solid fa-calendar-check',
+                        route: 'filament.admin.pages.hr.attendance',
                         url: '/admin/hr/attendance',
                         activePatterns: ['admin/hr/attendance*'],
                     ),
                     new MenuItem(
                         key: 'menu.hr_payroll',
                         icon: 'fa-solid fa-money-check-dollar',
+                        route: 'filament.admin.pages.hr.payroll',
                         url: '/admin/hr/payroll',
                         activePatterns: ['admin/hr/payroll*'],
                     ),
@@ -182,12 +190,14 @@ class NavigationManager implements NavigationManagerInterface
                     new MenuItem(
                         key: 'menu.reports_financial',
                         icon: 'fa-solid fa-file-invoice-dollar',
+                        route: 'filament.admin.pages.reports.financial',
                         url: '/admin/reports/financial',
                         activePatterns: ['admin/reports/financial*'],
                     ),
                     new MenuItem(
                         key: 'menu.reports_sales',
                         icon: 'fa-solid fa-chart-column',
+                        route: 'filament.admin.pages.reports.sales',
                         url: '/admin/reports/sales',
                         activePatterns: ['admin/reports/sales*'],
                     ),
@@ -205,6 +215,7 @@ class NavigationManager implements NavigationManagerInterface
                     new MenuItem(
                         key: 'menu.settings_company',
                         icon: 'fa-solid fa-building',
+                        route: 'company.edit',
                         url: '/settings/company',
                         activePatterns: ['settings/company*'],
                     ),

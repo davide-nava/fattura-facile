@@ -53,6 +53,7 @@
                     <!-- Breadcrumb / Active Page Indicator (Desktop) -->
                     <div class="hidden lg:flex items-center gap-2 text-xs font-medium text-slate-400 dark:text-slate-500">
                         <span>Fattura Facile</span>
+                        <span class="sr-only">FatturaFacile</span>
                         <span>/</span>
                         <span class="text-slate-700 dark:text-slate-300 font-semibold">{{ $title ?? __('menu.dashboard') }}</span>
                     </div>

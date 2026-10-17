@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Modules\Audit\Services\AuditService;
+use App\Modules\Reporting\Services\ReportManager;
 use App\Modules\Tenancy\Services\TenantContext;
 use App\Services\Localization\Audit\Contracts\TranslationAuditorInterface;
 use App\Services\Localization\Audit\Contracts\TranslationScannerInterface;
@@ -12,8 +13,12 @@ use App\Services\Localization\Contracts\LocaleManagerInterface;
 use App\Services\Localization\LocaleManager;
 use App\Services\Navigation\Contracts\NavigationManagerInterface;
 use App\Services\Navigation\NavigationManager;
+use App\Services\Pdf\Contracts\PdfGeneratorInterface;
+use App\Services\Pdf\PdfManager;
 use App\Support\Database\AutoMigrator;
 use Carbon\CarbonImmutable;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
@@ -57,6 +62,22 @@ class AppServiceProvider extends ServiceProvider
             NavigationManagerInterface::class,
             NavigationManager::class
         );
+
+        $this->app->singleton(PdfManager::class, function ($app) {
+            return new PdfManager($app);
+        });
+
+        $this->app->singleton(
+            PdfGeneratorInterface::class,
+            PdfManager::class
+        );
+
+        $this->app->singleton(ReportManager::class, function ($app) {
+            return new ReportManager(
+                $app,
+                $app->make(PdfGeneratorInterface::class)
+            );
+        });
     }
 
     /**
@@ -64,6 +85,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Blade::anonymousComponentPath(resource_path('views/layouts'), 'layouts');
+        Blade::anonymousComponentPath(resource_path('views/components/print'), 'print');
+
+        Factory::guessFactoryNamesUsing(function (string $modelName) {
+            return 'Database\\Factories\\'.class_basename($modelName).'Factory';
+        });
+
         $this->configureDefaults();
         $this->autoRunPendingMigrations();
     }

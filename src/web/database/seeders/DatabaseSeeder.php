@@ -13,6 +13,9 @@ use App\Modules\Inventory\Services\StockService;
 use App\Modules\Products\Models\Product;
 use App\Modules\Products\Models\ProductCategory;
 use App\Modules\Products\Models\TaxRate;
+use App\Modules\Purchasing\Models\PurchaseOrder;
+use App\Modules\Purchasing\Models\SupplierInvoice;
+use App\Modules\Sales\Models\Quote;
 use App\Modules\Suppliers\Models\Supplier;
 use App\Modules\Tenancy\Models\Tenant;
 use App\Modules\Tenancy\Services\TenantContext;
@@ -176,7 +179,7 @@ class DatabaseSeeder extends Seeder
         );
 
         // 10. Create Sample Customer & Supplier
-        Customer::create([
+        $customer = Customer::create([
             'tenant_id' => $tenant->id,
             'company_id' => $company->id,
             'code' => 'CUST-001',
@@ -196,7 +199,7 @@ class DatabaseSeeder extends Seeder
             'is_active' => true,
         ]);
 
-        Supplier::create([
+        $supplier = Supplier::create([
             'tenant_id' => $tenant->id,
             'company_id' => $company->id,
             'code' => 'SUPP-001',
@@ -212,6 +215,103 @@ class DatabaseSeeder extends Seeder
             'payment_term_days' => 30,
             'currency' => 'CHF',
             'is_active' => true,
+        ]);
+
+        // 11. Create Sample Quotations
+        Quote::create([
+            'tenant_id' => $tenant->id,
+            'company_id' => $company->id,
+            'customer_id' => $customer->id,
+            'quote_number' => 'QUO-2026-001',
+            'quote_date' => '2026-03-01',
+            'valid_until' => '2026-04-15',
+            'status' => 'sent',
+            'currency' => 'CHF',
+            'subtotal' => '4497.00',
+            'tax_total' => '364.25',
+            'total' => '4861.25',
+            'notes' => 'Complete hardware and IT rollout quotation for Alpine Solutions',
+        ]);
+
+        Quote::create([
+            'tenant_id' => $tenant->id,
+            'company_id' => $company->id,
+            'customer_id' => $customer->id,
+            'quote_number' => 'QUO-2026-002',
+            'quote_date' => '2026-03-10',
+            'valid_until' => '2026-05-01',
+            'status' => 'accepted',
+            'currency' => 'CHF',
+            'subtotal' => '9500.00',
+            'tax_total' => '769.50',
+            'total' => '10269.50',
+            'notes' => 'Annual ERP support and consultation agreement',
+        ]);
+
+        // 12. Create Sample Purchase Orders
+        $po = PurchaseOrder::create([
+            'tenant_id' => $tenant->id,
+            'company_id' => $company->id,
+            'supplier_id' => $supplier->id,
+            'order_number' => 'PO-2026-001',
+            'order_date' => '2026-02-15',
+            'expected_date' => '2026-03-05',
+            'status' => 'received',
+            'currency' => 'CHF',
+            'subtotal' => '14250.00',
+            'tax_total' => '1154.25',
+            'total' => '15404.25',
+            'notes' => 'Bulk batch order for Enterprise Laptops X1 series',
+        ]);
+
+        PurchaseOrder::create([
+            'tenant_id' => $tenant->id,
+            'company_id' => $company->id,
+            'supplier_id' => $supplier->id,
+            'order_number' => 'PO-2026-002',
+            'order_date' => '2026-03-12',
+            'expected_date' => '2026-04-01',
+            'status' => 'ordered',
+            'currency' => 'CHF',
+            'subtotal' => '7800.00',
+            'tax_total' => '631.80',
+            'total' => '8431.80',
+            'notes' => 'Network switches and biometric readers inventory replenishment',
+        ]);
+
+        // 13. Create Sample Vendor Bills (Supplier Invoices)
+        SupplierInvoice::create([
+            'tenant_id' => $tenant->id,
+            'company_id' => $company->id,
+            'supplier_id' => $supplier->id,
+            'purchase_order_id' => $po->id,
+            'supplier_invoice_number' => 'SUPP-INV-88421',
+            'invoice_date' => '2026-02-20',
+            'due_date' => '2026-03-22',
+            'status' => 'paid',
+            'currency' => 'CHF',
+            'subtotal' => '14250.00',
+            'tax_total' => '1154.25',
+            'total' => '15404.25',
+            'paid_amount' => '15404.25',
+            'notes' => 'Settled in full via SEPA Bank Transfer',
+        ]);
+
+        SupplierInvoice::create([
+            'tenant_id' => $tenant->id,
+            'company_id' => $company->id,
+            'supplier_id' => $supplier->id,
+            'purchase_order_id' => null,
+            'supplier_invoice_number' => 'SUPP-INV-89104',
+            'invoice_date' => '2026-03-15',
+            'due_date' => '2026-04-15',
+            'status' => 'received',
+            'currency' => 'CHF',
+            'subtotal' => '3200.00',
+            'tax_total' => '259.20',
+            'total' => '3459.20',
+            'paid_amount' => '0.00',
+            'notes' => 'Data center rack colocation and maintenance service Q1',
         ]);
     }
 }

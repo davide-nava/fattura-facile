@@ -2,6 +2,7 @@
 
 namespace App\Modules\Companies\Models;
 
+use App\Modules\Companies\Services\CompanyBranding;
 use App\Shared\Traits\BelongsToTenant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -50,5 +51,10 @@ class Company extends Model
     public function documentSequences(): HasMany
     {
         return $this->hasMany(DocumentSequence::class, 'company_id');
+    }
+
+    public function getBranding(): CompanyBranding
+    {
+        return CompanyBranding::fromCompany($this);
     }
 }
