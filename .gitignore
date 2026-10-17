@@ -31,20 +31,20 @@
 **/.phpactor.json
 **/Homestead.json
 **/Homestead.yaml
-/.fleet
+**/.fleet
 # /.idea
-/.nova
+**/.nova
 # /.vscode
-/.zed
+**/.zed
 # /.agents
-/.amp
-/.claude
-/.cursor
-/.factory
-/.grok
-/.junie
-/.kiro
-/.pi
+**/.amp
+**/.claude
+**/.cursor
+**/.factory
+**/.grok
+**/.junie
+**/.kiro
+**/.pi
 # /.mcp.json
 # /CLAUDE.md
 # /boost.json

@@ -4,7 +4,7 @@
 Accepted
 
 ## Context
-FatturaFacile is intended for SaaS deployment across multiple small and medium enterprises, as well as on-premise single-tenant or multi-subsidiary deployments. Requirements mandate strict data isolation so that no tenant can ever view, modify, or leak data belonging to another tenant across UI queries, APIs, background jobs, exports, or attachment downloads.
+Fattura Facile is intended for SaaS deployment across multiple small and medium enterprises, as well as on-premise single-tenant or multi-subsidiary deployments. Requirements mandate strict data isolation so that no tenant can ever view, modify, or leak data belonging to another tenant across UI queries, APIs, background jobs, exports, or attachment downloads.
 
 ## Decision
 We adopt a **shared-database, tenant-aware discriminant column (`tenant_id`) architecture** reinforced by defense-in-depth:

@@ -3,7 +3,7 @@
 ])
 
 @if($sidebar)
-    <flux:sidebar.brand :name="config('app.name', 'FatturaFacile')" {{ $attributes }}>
+    <flux:sidebar.brand :name="config('app.name', 'Fattura Facile')" {{ $attributes }}>
         <x-slot name="logo" class="flex aspect-square size-9 items-center justify-center rounded-xl bg-slate-900 dark:bg-slate-800 p-1">
             <x-app-logo-icon class="size-7" />
         </x-slot>

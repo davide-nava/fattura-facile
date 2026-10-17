@@ -2,7 +2,7 @@
     <div class="flex flex-col gap-6">
         <x-auth-header
             :title="__('Email verification')"
-            :description="__('Please verify your email address to continue using FatturaFacile.')"
+            :description="__('Please verify your email address to continue using Fattura Facile.')"
         />
 
         <flux:text class="text-center text-sm text-slate-600 dark:text-slate-400">

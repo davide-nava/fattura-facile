@@ -1,7 +1,7 @@
-# FatturaFacile — Architecture Overview
+# Fattura Facile — Architecture Overview
 
 ## 1. System Vision
-**FatturaFacile** (https://fatturafacile.eu/) is a modern, modular, multi-tenant ERP platform designed for small and medium-sized enterprises (SMEs). It offers comprehensive business administration spanning sales, purchasing, inventory, invoicing, double-entry accounting, customer relations (CRM), and Swiss localization foundations.
+**Fattura Facile** (https://fatturafacile.eu/) is a modern, modular, multi-tenant ERP platform designed for small and medium-sized enterprises (SMEs). It offers comprehensive business administration spanning sales, purchasing, inventory, invoicing, double-entry accounting, customer relations (CRM), and Swiss localization foundations.
 
 The system is built as a **modular monolith** in PHP 8.5+ and Laravel 13, utilizing Filament v5 for administration, Livewire for dynamic interactive components, PostgreSQL 16+ for relational persistence with strict ACID transactions, and Docker for uniform cloud SaaS and on-premise deployments.
 
@@ -32,7 +32,7 @@ app/
 ```
 
 ## 3. Multi-Tenancy Strategy
-FatturaFacile employs a **shared-database, tenant-partitioned** model with defense-in-depth isolation:
+Fattura Facile employs a **shared-database, tenant-partitioned** model with defense-in-depth isolation:
 1. **Tenant (Organization)**: Highest-level isolation boundary. Every business entity explicitly references `tenant_id`.
 2. **Company (Legal Entity)**: Distinct legal company belonging to a tenant. References `tenant_id` and `id`.
 3. **Branch**: Operational unit or facility belonging to a company. References `tenant_id`, `company_id`.

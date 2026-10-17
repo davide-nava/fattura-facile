@@ -34,7 +34,7 @@
 
         window.applyTheme = function (theme) {
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = theme === 'dark' || (theme === 'system' && prefersDark);
+            const isDark = theme === 'dark' ;
 
             if (isDark) {
                 document.documentElement.classList.add('dark');
@@ -43,15 +43,17 @@
             }
 
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            localStorage.setItem('flux.appearance', theme);
+            localStorage.setItem('flux.appearance', isDark ? 'dark' : 'light');
 
             if (window.$flux) {
-                window.$flux.appearance = theme;
+                window.$flux.appearance = isDark ? 'dark' : 'light';
             }
 
             window.dispatchEvent(new CustomEvent('theme-changed', {
-                detail: { theme: isDark ? 'dark' : 'light', mode: theme }
+                detail: { theme: isDark ? 'dark' : 'light', mode: isDark ? 'dark' : 'light' }
             }));
+
+            document.cookie = `theme=${isDark ? 'dark' : 'light'}; path=/; max-age=31536000; SameSite=Lax`;
         };
 
         window.toggleTheme = function () {

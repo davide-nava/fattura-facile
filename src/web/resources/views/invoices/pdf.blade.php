@@ -1,5 +1,9 @@
+@php
+    $theme = request()->cookie('theme', 'light');
+@endphp
+
 <!DOCTYPE html>
-<html>
+<html lang="it" class="{{ $theme === 'dark' ? 'dark' : '' }}">
 <head>
     <meta charset="utf-8">
     <title>{{ __('Invoice') }} {{ $invoice->invoice_number }}</title>
@@ -114,7 +118,7 @@
     </div>
 
     <div class="footer">
-        {{ $company->name }} &bull; {{ $company->city }}, {{ $company->country }} &bull; FatturaFacile ERP (https://fatturafacile.eu)
+        {{ $company->name }} &bull; {{ $company->city }}, {{ $company->country }} &bull; Fattura Facile ERP (https://fatturafacile.eu)
     </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # fattura_facile
 
-FatturaFacile
+Fattura Facile
 
 ## Getting Started
 

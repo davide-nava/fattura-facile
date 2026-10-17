@@ -1,5 +1,9 @@
+@php
+    $theme = request()->cookie('theme', 'light');
+@endphp
+
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"   class="{{ $theme === 'dark' ? 'dark' : '' }}" >
     <head>
         @include('partials.head')
         @filamentStyles

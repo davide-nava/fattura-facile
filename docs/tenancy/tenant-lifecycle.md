@@ -1,7 +1,7 @@
 # Tenant Lifecycle & Security Architecture
 
 ## 1. Domain Separation
-FatturaFacile enforces a hierarchy of multi-tenant ownership:
+Fattura Facile enforces a hierarchy of multi-tenant ownership:
 ```
 Tenant (Customer Organization / Isolated Boundary)
   └── Companies (Legal Entities e.g. AG, Sàrl, GmbH)

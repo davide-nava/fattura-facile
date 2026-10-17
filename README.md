@@ -1,4 +1,4 @@
-# FatturaFacile
+# Fattura Facile
 
 > **Multi-Tenant ERP Platform for Small & Medium Enterprises**  
 > Official Website: [https://fatturafacile.eu/](https://fatturafacile.eu/)  
@@ -16,7 +16,7 @@
 
 ## 1. Project Overview
 
-**FatturaFacile** is an enterprise-grade, modular, multi-tenant ERP platform architected specifically for small and medium-sized businesses (SMEs) with Swiss localization foundations and international readiness.
+**Fattura Facile** is an enterprise-grade, modular, multi-tenant ERP platform architected specifically for small and medium-sized businesses (SMEs) with Swiss localization foundations and international readiness.
 
 It is designed to serve both **Cloud SaaS multi-tenant distribution** and **Customer-managed on-premise single/multi-company installations** using an identical application codebase.
 
@@ -66,7 +66,7 @@ The platform is structured into 17 domain-driven modules inside `app/Modules/`:
 ## 4. Repository Layout & Architecture
 
 ```
-FatturaFacile/
+fattura-facile/
 ├── .github/                 # Workflows (ci.yml, release.yml, sonarcloud.yml), issue templates, PR template
 ├── .run/                    # PhpStorm Run/Debug configurations
 ├── dockers/                 # Container infrastructure (PostgreSQL 16/17, pgAdmin)
@@ -92,7 +92,7 @@ FatturaFacile/
 
 ## 5. Prerequisites
 
-Before installing FatturaFacile locally, ensure you have:
+Before installing Fattura Facile locally, ensure you have:
 
 - **PHP 8.5+** with the following extensions enabled:
   `bcmath`, `intl`, `pdo_pgsql`, `pgsql`, `pdo_sqlite`, `sqlite3`, `zip`, `gd`
@@ -176,7 +176,7 @@ The application is configured using standard environment variables defined in `s
 
 | Variable | Default Value | Description |
 | :--- | :--- | :--- |
-| `APP_NAME` | `FatturaFacile` | Application name displayed in emails and Filament UI. |
+| `APP_NAME` | `Fattura Facile` | Application name displayed in emails and Filament UI. |
 | `APP_ENV` | `local` | Environment mode (`local`, `production`, `testing`). |
 | `APP_KEY` | *(generated)* | 32-character AES encryption key (`php artisan key:generate`). |
 | `APP_DEBUG` | `true` | Detailed debug error reporting (must be `false` in production). |
@@ -199,7 +199,7 @@ The application is configured using standard environment variables defined in `s
 
 ## 8. Testing & 100% Code Coverage
 
-FatturaFacile enforces **100% code coverage** across all statements, methods, and domain logic. Every PR must satisfy this gate in CI.
+Fattura Facile enforces **100% code coverage** across all statements, methods, and domain logic. Every PR must satisfy this gate in CI.
 
 From the `src/laravel` directory:
 
@@ -325,7 +325,7 @@ The `.github/workflows/ci.yml` pipeline automates continuous integration:
 
 ## 15. License
 
-FatturaFacile is open-source software licensed under the [MIT License](LICENSE).  
+Fattura Facile is open-source software licensed under the [MIT License](LICENSE).  
 Official project website: [https://fatturafacile.eu/](https://fatturafacile.eu/)
 
 ## 16. Disclaimer

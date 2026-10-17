@@ -1,12 +1,12 @@
 name: Feature Request
-description: Propose an idea, new module feature, or localization enhancement for FatturaFacile
+description: Propose an idea, new module feature, or localization enhancement for Fattura Facile
 title: "[FEATURE]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for suggesting a new feature for FatturaFacile! Please describe the use case, business rationale, and proposed implementation below.
+        Thank you for suggesting a new feature for Fattura Facile! Please describe the use case, business rationale, and proposed implementation below.
 
   - type: dropdown
     id: module

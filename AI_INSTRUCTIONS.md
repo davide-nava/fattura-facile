@@ -1,10 +1,10 @@
 # AI Coding Assistant Instructions & Architectural Guidelines
 
-> **Project**: FatturaFacile  
+> **Project**: Fattura Facile  
 > **Platform**: Multi-Tenant ERP Platform for SMEs  
 > **Tech Stack**: Laravel 13, Filament v5, Livewire 4, Alpine.js, Tailwind CSS v4, PostgreSQL 16/17, Redis 7, PHP 8.5, Docker.
 
-This document serves as the primary guidance file for AI coding assistants (such as Antigravity, GitHub Copilot, Claude, Cursor, ChatGPT, and others) operating within the FatturaFacile repository.
+This document serves as the primary guidance file for AI coding assistants (such as Antigravity, GitHub Copilot, Claude, Cursor, ChatGPT, and others) operating within the Fattura Facile repository.
 
 ---
 
@@ -13,7 +13,7 @@ This document serves as the primary guidance file for AI coding assistants (such
 The repository separates container infrastructure, JetBrains `.run` configurations, ADR documentation, and the Laravel source:
 
 ```
-FatturaFacile/
+fattura-facile/
 ├── .github/                 # Workflows (ci.yml, release.yml, sonarcloud.yml), issue templates, PR template
 ├── .run/                    # PhpStorm Run/Debug configurations
 ├── dockers/                 # PostgreSQL 16/17 and pgAdmin orchestration
@@ -119,7 +119,7 @@ When generating or refactoring code, AI assistants **must strictly enforce** the
 
 ## 5. Testing & 100% Code Coverage Rule
 
-The FatturaFacile CI/CD pipeline enforces a strict **100% Code Coverage Quality Gate**.
+The Fattura Facile CI/CD pipeline enforces a strict **100% Code Coverage Quality Gate**.
 
 - **Test Framework**: PHPUnit 12 & Pest 4.
 - **Rules for New Code**:

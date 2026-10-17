@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug, broken workflow, or unexpected error in FatturaFacile
+description: Report a bug, broken workflow, or unexpected error in Fattura Facile
 title: "[BUG]: "
 labels: ["bug"]
 body:

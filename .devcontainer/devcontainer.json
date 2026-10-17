@@ -1,5 +1,5 @@
 {
-	"name": "FatturaFacile Laravel DevContainer",
+	"name": "Fattura Facile Laravel DevContainer",
 	"dockerComposeFile": [
 		"../src/laravel/compose.yaml"
 	],

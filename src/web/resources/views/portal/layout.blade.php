@@ -83,7 +83,7 @@
 
     <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-4 mt-auto transition-colors duration-200">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 dark:text-slate-400">
-            &copy; {{ date('Y') }} FatturaFacile Portal. {{ __('All rights reserved. Secure B2B/B2C Self-Service.') }}
+            &copy; {{ date('Y') }} Fattura Facile Portal. {{ __('All rights reserved. Secure B2B/B2C Self-Service.') }}
         </div>
     </footer>
 </body>

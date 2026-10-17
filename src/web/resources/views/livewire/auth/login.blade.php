@@ -4,7 +4,7 @@
 {{--            <x-language-switcher />--}}
 {{--        </div>--}}
 
-{{--        <x-auth-header :title="__('Log in to your account')" :description="__('Enter your email and password below to access FatturaFacile')" />--}}
+{{--        <x-auth-header :title="__('Log in to your account')" :description="__('Enter your email and password below to access Fattura Facile')" />--}}
 
         <!-- Session Status -->
         <x-auth-session-status class="text-center" :status="session('status')" />

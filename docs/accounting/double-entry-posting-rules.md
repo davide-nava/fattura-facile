@@ -1,7 +1,7 @@
 # Double-Entry Accounting Posting Rules
 
 ## 1. Accounting Invariants
-Every journal entry created and posted in FatturaFacile must strictly respect:
+Every journal entry created and posted in Fattura Facile must strictly respect:
 1. **Mathematical Equilibrium**:
    $$\sum \text{Debits} = \sum \text{Credits}$$
    Both sides must balance to the exact cent without any floating-point approximation.

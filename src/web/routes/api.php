@@ -20,7 +20,7 @@ Route::get('/user', function (Request $request) {
 Route::get('/v1/health', function () {
     return response()->json([
         'status' => 'healthy',
-        'platform' => 'FatturaFacile',
+        'platform' => 'Fattura Facile',
         'version' => '1.0.0',
         'timestamp' => now()->toIso8601String(),
     ]);

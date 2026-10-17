@@ -68,7 +68,7 @@ class ApiControllersTest extends TestCase
         $response->assertStatus(200)
             ->assertJson([
                 'status' => 'healthy',
-                'platform' => 'FatturaFacile',
+                'platform' => 'Fattura Facile',
                 'version' => '1.0.0',
             ]);
     }

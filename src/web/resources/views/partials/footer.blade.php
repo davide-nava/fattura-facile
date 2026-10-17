@@ -26,7 +26,7 @@
                     <li><a href="{{ url('/#perche') }}" class="hover:text-white transition-colors">{{ __('Why Fattura Facile') }}</a></li>
                     <li><a href="{{ url('/#versioni') }}" class="hover:text-white transition-colors">{{ __('Desktop vs Cloud') }}</a></li>
                     <li><a href="{{ url('/#community-richieste') }}" class="hover:text-teal-400 transition-colors">{{ __('Request Free Modules') }}</a></li>
-                    <li><a href="https://github.com/davide-nava/FatturaFacile" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{{ __('GitHub Repository') }}</a></li>
+                    <li><a href="https://github.com/davide-nava/fattura-facile" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{{ __('GitHub Repository') }}</a></li>
                 </ul>
             </div>
 
@@ -37,7 +37,7 @@
                     <li><span class="text-slate-400">{{ __('GDPR Notice (EU Reg. 2016/679)') }}</span></li>
                     <li><span class="text-slate-400">{{ __('Swiss FADP Compliance') }}</span></li>
                     <li><span class="text-slate-400">{{ __('Offline Privacy Architecture') }}</span></li>
-                    <li><a href="https://github.com/davide-nava/FatturaFacile/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{{ __('Software License') }}</a></li>
+                    <li><a href="https://github.com/davide-nava/fattura-facile/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{{ __('Software License') }}</a></li>
                 </ul>
             </div>
 

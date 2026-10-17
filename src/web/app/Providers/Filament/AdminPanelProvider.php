@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->brandName('FatturaFacile')
+            ->brandName('Fattura Facile')
             ->login()
             ->colors([
                 'primary' => Color::Teal,

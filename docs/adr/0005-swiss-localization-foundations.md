@@ -4,7 +4,7 @@
 Accepted
 
 ## Context
-FatturaFacile targets Swiss SMEs alongside international applicability. Swiss commercial standards require specific tax rates, rounding behaviors (Swiss 5-cent rounding for cash or invoice totals), enterprise UID formatting, and language handling (EN, DE, FR, IT).
+Fattura Facile targets Swiss SMEs alongside international applicability. Swiss commercial standards require specific tax rates, rounding behaviors (Swiss 5-cent rounding for cash or invoice totals), enterprise UID formatting, and language handling (EN, DE, FR, IT).
 
 ## Decision
 1. **Configurable Tax Rates**: Swiss VAT rates (Standard 8.1%, Reduced 2.6%, Accommodation 3.8%, Exempt 0%) are seeded with effective dates and code classifications.

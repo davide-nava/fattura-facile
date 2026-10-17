@@ -1,6 +1,6 @@
-# Contributing to FatturaFacile
+# Contributing to Fattura Facile
 
-Thank you for your interest in contributing to **FatturaFacile**! We welcome bug fixes, documentation improvements, Swiss & EU localization enhancements, performance optimizations, and new ERP module capabilities.
+Thank you for your interest in contributing to **Fattura Facile**! We welcome bug fixes, documentation improvements, Swiss & EU localization enhancements, performance optimizations, and new ERP module capabilities.
 
 Please take a few moments to review this guide to ensure a smooth, efficient collaboration process.
 
@@ -172,7 +172,7 @@ Any Pull Request that breaks any of the following core invariants will be automa
 
 ## Testing & 100% Code Coverage Quality Gate
 
-FatturaFacile enforces a **strict 100% Code Coverage Gate** across all statements, methods, and paths in core domain modules.
+Fattura Facile enforces a **strict 100% Code Coverage Gate** across all statements, methods, and paths in core domain modules.
 
 ### Running Tests
 Execute the test suite from `src/laravel`:
@@ -235,4 +235,4 @@ Before opening your Pull Request, verify:
 - [ ] The PR title follows Conventional Commits.
 - [ ] You have filled out all sections of the [Pull Request Template](.github/pull_request_template.md).
 
-Thank you for helping make **FatturaFacile** the most reliable, modern open-source ERP for SMEs!
+Thank you for helping make **Fattura Facile** the most reliable, modern open-source ERP for SMEs!

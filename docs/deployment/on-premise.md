@@ -1,7 +1,7 @@
 # On-Premise Installation & Operations Guide
 
 ## Overview
-FatturaFacile runs completely on-premise without requiring connections to proprietary third-party cloud services. The same single codebase operates both SaaS and single/multi-company on-premise enterprise environments.
+Fattura Facile runs completely on-premise without requiring connections to proprietary third-party cloud services. The same single codebase operates both SaaS and single/multi-company on-premise enterprise environments.
 
 ## Minimum System Requirements
 - 2 CPU Cores

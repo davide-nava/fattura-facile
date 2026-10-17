@@ -177,9 +177,9 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 
 ---
 
-# FatturaFacile AI Coding Guidelines & Architectural Context
+# Fattura Facile AI Coding Guidelines & Architectural Context
 
-> **Note for AI Coding Assistants**: This section defines the repository-specific architecture, domain rules, and invariants for **FatturaFacile**. Always follow these rules alongside the general Laravel conventions.
+> **Note for AI Coding Assistants**: This section defines the repository-specific architecture, domain rules, and invariants for **Fattura Facile**. Always follow these rules alongside the general Laravel conventions.
 
 ## 1. Directory Structure & Execution Context
 
@@ -188,7 +188,7 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 - **CRITICAL**: When executing Artisan commands, Composer operations, NPM builds, or test runners, **always set the working directory to `src/laravel/`**.
 
 ```
-FatturaFacile/
+fattura-facile/
 ├── .github/                 # GitHub Actions workflows, issue templates, PR template
 ├── .run/                    # PhpStorm Run/Debug configurations
 ├── dockers/                 # Container orchestration (PostgreSQL 16/17, pgAdmin)

@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Only the latest release branch of FatturaFacile receives active security patches.
+Only the latest release branch of Fattura Facile receives active security patches.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -11,7 +11,7 @@ Only the latest release branch of FatturaFacile receives active security patches
 
 ## Reporting a Vulnerability
 
-Security is paramount in FatturaFacile, especially regarding multi-tenant data isolation and financial accuracy.
+Security is paramount in Fattura Facile, especially regarding multi-tenant data isolation and financial accuracy.
 
 If you discover a security vulnerability, please do NOT disclose it publicly via GitHub issues or discussions.
 
@@ -26,7 +26,7 @@ Please include:
 We commit to acknowledging your report within 48 hours and providing an estimated timeline for remediation.
 
 ## Multi-Tenancy Security Invariants
-FatturaFacile maintains absolute tenant isolation as a core security requirement:
+Fattura Facile maintains absolute tenant isolation as a core security requirement:
 - Direct object reference (IDOR) attacks across tenants must always return `404 Not Found`.
 - System operations requiring cross-tenant execution must use `TenantContext::executeAsSystem()`.
 - Unscoped queries on tenant-aware entities are blocked by default.

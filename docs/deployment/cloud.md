@@ -1,7 +1,7 @@
 # Cloud SaaS Deployment Guide
 
 ## Architecture
-In cloud multi-tenant deployment, FatturaFacile runs as containerized application services behind a load balancer with managed PostgreSQL and Redis clusters:
+In cloud multi-tenant deployment, Fattura Facile runs as containerized application services behind a load balancer with managed PostgreSQL and Redis clusters:
 
 ```
 [ Internet ]

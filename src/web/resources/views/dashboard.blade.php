@@ -13,7 +13,7 @@
                     </span>
                 </div>
                 <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight" data-welcome="Benvenuto in">
-                    {{ __('Welcome to') }} <span class="text-teal-600 dark:text-teal-400">FatturaFacile</span>
+                    {{ __('Welcome to') }} <span class="text-teal-600 dark:text-teal-400">Fattura Facile</span>
                 </h1>
                 <p class="text-slate-500 dark:text-slate-400 text-sm max-w-2xl">
                     {{ __('Lightweight, transparent invoicing and business management under your control. Manage master records, accounting documents, and fiscal compliance.') }}
