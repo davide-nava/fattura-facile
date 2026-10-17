@@ -60,8 +60,6 @@
 
                 <!-- Right: Language Switcher, Theme & User Menu -->
                 <div class="flex items-center gap-2.5 sm:gap-3">
-                    <x-language-switcher variant="compact" class="hidden sm:inline-flex" />
-
                     @auth
                         <x-desktop-user-menu />
                     @endauth

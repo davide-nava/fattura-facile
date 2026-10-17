@@ -7,8 +7,7 @@ Route::get('language/{locale}', [LocaleController::class, 'switch'])->name('loca
 Route::post('language', [LocaleController::class, 'update'])->name('locale.update');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('/', 'welcome')->name('home');
-
+    Route::view('/', 'dashboard')->name('dashboard');
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });
 

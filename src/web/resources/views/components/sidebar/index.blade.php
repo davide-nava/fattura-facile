@@ -77,7 +77,7 @@
                         <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
                             Fattura<span class="text-teal-600 dark:text-teal-400">Facile</span>
                         </span>
-                        <span class="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">ERP Suite</span>
+                        <span class="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">Fatture semplici, offline e cloud</span>
                     </div>
                 </a>
             </template>
@@ -296,7 +296,7 @@
                     <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
                         Fattura<span class="text-teal-600 dark:text-teal-400">Facile</span>
                     </span>
-                    <span class="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">ERP Suite</span>
+                    <span class="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-1">Fatture semplici, offline e cloud</span>
                 </div>
             </a>
             <button
