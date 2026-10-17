@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use App\Modules\Audit\Services\AuditService;
 use App\Modules\Tenancy\Services\TenantContext;
+use App\Services\Localization\Audit\Contracts\TranslationAuditorInterface;
+use App\Services\Localization\Audit\Contracts\TranslationScannerInterface;
+use App\Services\Localization\Audit\Services\CodebaseTranslationScanner;
+use App\Services\Localization\Audit\Services\TranslationAuditor;
 use App\Services\Localization\Contracts\LocaleManagerInterface;
 use App\Services\Localization\LocaleManager;
 use App\Support\Database\AutoMigrator;
@@ -35,6 +39,16 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(
             LocaleManagerInterface::class,
             LocaleManager::class
+        );
+
+        $this->app->singleton(
+            TranslationScannerInterface::class,
+            CodebaseTranslationScanner::class
+        );
+
+        $this->app->singleton(
+            TranslationAuditorInterface::class,
+            TranslationAuditor::class
         );
     }
 

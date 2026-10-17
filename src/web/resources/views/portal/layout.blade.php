@@ -19,7 +19,7 @@
                         <a href="{{ route('portal.dashboard') }}" class="flex items-center gap-2.5">
                             <x-app-logo-icon class="h-8 w-8 shrink-0" />
                             <span class="text-slate-900 dark:text-white font-black text-xl tracking-tight">Fattura<span class="text-teal-600 dark:text-teal-400">Facile</span></span>
-                            <span class="text-[10px] bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60 px-2 py-0.5 rounded-full font-bold uppercase">B2B Portal</span>
+                            <span class="text-[10px] bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60 px-2 py-0.5 rounded-full font-bold uppercase">{{ __('B2B Portal') }}</span>
                         </a>
                     </div>
                     @auth('customer_portal')
@@ -40,8 +40,6 @@
                     @endauth
                 </div>
                 <div class="flex items-center space-x-3">
-                    <x-language-switcher />
-
                     <x-theme-toggle />
 
                     @auth('customer_portal')
