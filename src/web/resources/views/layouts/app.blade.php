@@ -21,7 +21,7 @@
                         {{ __('Dashboard') }}
                     </a>
                     <a href="{{ url('/admin') }}" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors flex items-center gap-1.5">
-                        <span>{{ __('Management Panel') }}</span>
+                        <span data-panel="Pannello Gestionale">{{ __('Management Panel') }}</span>
                         <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">ERP</span>
                     </a>
                     <a href="{{ url('/admin/customers') }}" class="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
@@ -49,7 +49,7 @@
                     @auth
                         <x-desktop-user-menu />
                     @else
-                        <a href="{{ route('login') }}" class="px-4 py-2 text-sm font-semibold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-xl shadow-sm transition-all duration-200">
+                        <a href="{{ route('login') }}" data-login="Accedi" class="px-4 py-2 text-sm font-semibold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-xl shadow-sm transition-all duration-200">
                             {{ __('Log in') }}
                         </a>
                     @endauth

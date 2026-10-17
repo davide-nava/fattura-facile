@@ -24,6 +24,13 @@
                 @endif
             </div>
 
+            <flux:select wire:model="locale" :label="__('Language')">
+                <flux:select.option value="it">{{ __('Italiano (IT)') }}</flux:select.option>
+                <flux:select.option value="en">{{ __('English (EN)') }}</flux:select.option>
+                <flux:select.option value="de">{{ __('Deutsch (DE)') }}</flux:select.option>
+                <flux:select.option value="fr">{{ __('Français (FR)') }}</flux:select.option>
+            </flux:select>
+
             <div class="flex items-center gap-4">
                 <flux:button variant="primary" type="submit">{{ __('Save') }}</flux:button>
             </div>

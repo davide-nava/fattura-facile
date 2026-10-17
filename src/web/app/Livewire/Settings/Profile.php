@@ -19,6 +19,8 @@ class Profile extends Component
 
     public string $email = '';
 
+    public string $locale = 'it';
+
     /**
      * Mount the component.
      */
@@ -26,6 +28,7 @@ class Profile extends Component
     {
         $this->name = Auth::user()->name;
         $this->email = Auth::user()->email;
+        $this->locale = Auth::user()->locale ?? app()->getLocale();
     }
 
     /**
@@ -44,6 +47,11 @@ class Profile extends Component
         }
 
         $user->save();
+
+        if (! empty($validated['locale'])) {
+            session()->put('locale', $validated['locale']);
+            app()->setLocale($validated['locale']);
+        }
 
         Flux::toast(variant: 'success', text: __('Profile updated.'));
     }

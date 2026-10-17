@@ -4,8 +4,11 @@ namespace App\Providers;
 
 use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Contracts\Translation\HasLocalePreference;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -29,6 +32,41 @@ class FortifyServiceProvider extends ServiceProvider
         $this->configureActions();
         $this->configureViews();
         $this->configureRateLimiting();
+        $this->configureEmailVerification();
+    }
+
+    /**
+     * Configure email verification notification.
+     */
+    private function configureEmailVerification(): void
+    {
+        VerifyEmail::toMailUsing(function ($notifiable, string $url) {
+            $locale = $notifiable instanceof HasLocalePreference
+                ? ($notifiable->preferredLocale() ?? app()->getLocale())
+                : app()->getLocale();
+
+            return (new class($locale) extends MailMessage
+            {
+                public function __construct(protected string $targetLocale) {}
+
+                public function render()
+                {
+                    $current = app()->getLocale();
+                    app()->setLocale($this->targetLocale);
+
+                    try {
+                        return parent::render();
+                    } finally {
+                        app()->setLocale($current);
+                    }
+                }
+            })
+                ->subject(__('Verify your email address', [], $locale))
+                ->markdown('emails.verify-email', [
+                    'url' => $url,
+                    'user' => $notifiable,
+                ]);
+        });
     }
 
     /**

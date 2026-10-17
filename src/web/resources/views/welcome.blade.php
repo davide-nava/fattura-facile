@@ -20,7 +20,7 @@
                 @auth
                     <x-desktop-user-menu />
                 @else
-                    <a href="{{ route('login') }}" class="px-4 py-2 text-sm font-semibold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-xl shadow-sm transition-all duration-200">
+                    <a href="{{ route('login') }}" data-login="Accedi" class="px-4 py-2 text-sm font-semibold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-xl shadow-sm transition-all duration-200">
                         {{ __('Log in') }}
                     </a>
                 @endauth

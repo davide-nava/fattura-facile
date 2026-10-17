@@ -51,7 +51,17 @@ class SetLocale
             }
         }
 
-        // 3. Fallback to application default locale
+        // 3. Check authenticated user's saved preference
+        $user = $request->user();
+        if ($user && ! empty($user->locale) && in_array($user->locale, self::SUPPORTED_LOCALES, true)) {
+            if ($request->hasSession()) {
+                $request->session()->put('locale', $user->locale);
+            }
+
+            return $user->locale;
+        }
+
+        // 4. Fallback to application default locale
         $default = config('app.locale', 'en');
 
         return in_array($default, self::SUPPORTED_LOCALES, true) ? $default : 'en';

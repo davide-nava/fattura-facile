@@ -17,6 +17,10 @@ class LocaleController extends Controller
         if (in_array($locale, SetLocale::SUPPORTED_LOCALES, true)) {
             $request->session()->put('locale', $locale);
             App::setLocale($locale);
+
+            if ($user = $request->user()) {
+                $user->update(['locale' => $locale]);
+            }
         }
 
         return redirect()->back(fallback: route('home'));

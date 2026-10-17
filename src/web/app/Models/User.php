@@ -7,6 +7,7 @@ use App\Modules\Tenancy\Models\Tenant;
 use Database\Factories\UserFactory;
 use Filament\Panel;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Translation\HasLocalePreference;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,6 +26,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property string|null $locale
  * @property Carbon|null $email_verified_at
  * @property string $password
  * @property string|null $two_factor_secret
@@ -34,9 +36,9 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name', 'email', 'password', 'locale'])]
 #[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
-class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
+class User extends Authenticatable implements HasLocalePreference, MustVerifyEmail, PasskeyUser
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable;
@@ -44,6 +46,7 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     protected $fillable = [
         'name',
         'email',
+        'locale',
         'password',
         'current_tenant_id',
         'is_superadmin',
@@ -158,5 +161,26 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
         return Str::length($initials) > 1
             ? Str::substr($initials, 0, 1).Str::substr($initials, -1)
             : $initials;
+    }
+
+    /**
+     * Get the user's preferred locale for notifications.
+     */
+    public function preferredLocale(): ?string
+    {
+        $locale = $this->locale;
+
+        if ($locale && in_array($locale, ['it', 'en', 'de', 'fr'], true)) {
+            return $locale;
+        }
+
+        if (session()->has('locale')) {
+            $sessionLocale = session()->get('locale');
+            if (is_string($sessionLocale) && in_array($sessionLocale, ['it', 'en', 'de', 'fr'], true)) {
+                return $sessionLocale;
+            }
+        }
+
+        return config('app.locale', 'en');
     }
 }
