@@ -18,7 +18,7 @@
 **/storage/pail
 
 # Environment & Credentials
-#**/.env
+**/.env
 **/.env.backup
 **/.env.production
 **/auth.json
@@ -50,3 +50,4 @@
 # /boost.json
 # /opencode.json
 # /opencode.jsonc
+src/web/.env
