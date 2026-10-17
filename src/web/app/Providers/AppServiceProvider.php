@@ -10,6 +10,8 @@ use App\Services\Localization\Audit\Services\CodebaseTranslationScanner;
 use App\Services\Localization\Audit\Services\TranslationAuditor;
 use App\Services\Localization\Contracts\LocaleManagerInterface;
 use App\Services\Localization\LocaleManager;
+use App\Services\Navigation\Contracts\NavigationManagerInterface;
+use App\Services\Navigation\NavigationManager;
 use App\Support\Database\AutoMigrator;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
@@ -49,6 +51,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(
             TranslationAuditorInterface::class,
             TranslationAuditor::class
+        );
+
+        $this->app->singleton(
+            NavigationManagerInterface::class,
+            NavigationManager::class
         );
     }
 
