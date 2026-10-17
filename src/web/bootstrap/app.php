@@ -21,6 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->encryptCookies(except: [
             'theme',
             'flux_appearance',
+            'locale',
+            'app_locale',
         ]);
 
         $middleware->web(append: [
@@ -30,6 +32,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->api(append: [
             InitializeTenantContext::class,
+            SetLocale::class,
         ]);
 
         $middleware->alias([

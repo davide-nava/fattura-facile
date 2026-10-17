@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Modules\Audit\Services\AuditService;
 use App\Modules\Tenancy\Services\TenantContext;
+use App\Services\Localization\Contracts\LocaleManagerInterface;
+use App\Services\Localization\LocaleManager;
 use App\Support\Database\AutoMigrator;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
@@ -29,6 +31,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(AutoMigrator::class, function () {
             return new AutoMigrator($this->app);
         });
+
+        $this->app->singleton(
+            LocaleManagerInterface::class,
+            LocaleManager::class
+        );
     }
 
     /**

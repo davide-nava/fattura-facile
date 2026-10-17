@@ -39,6 +39,7 @@
         @endphp
         <a
             href="{{ route('locale.switch', $code) }}"
+            onclick="window.setAppLocale && window.setAppLocale('{{ $code }}')"
             title="{{ $locale['name'] }}"
             aria-label="{{ $locale['aria'] }}"
             aria-current="{{ $isActive ? 'true' : 'false' }}"

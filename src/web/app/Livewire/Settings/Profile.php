@@ -3,6 +3,8 @@
 namespace App\Livewire\Settings;
 
 use App\Concerns\ProfileValidationRules;
+use App\Services\Localization\Commands\SetLocaleCommand;
+use App\Services\Localization\Commands\SetLocaleCommandHandler;
 use Flux\Flux;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Auth;
@@ -49,8 +51,13 @@ class Profile extends Component
         $user->save();
 
         if (! empty($validated['locale'])) {
-            session()->put('locale', $validated['locale']);
-            app()->setLocale($validated['locale']);
+            $handler = app(SetLocaleCommandHandler::class);
+            $cookie = $handler->handle(new SetLocaleCommand(
+                locale: (string) $validated['locale'],
+                user: $user,
+                request: request(),
+            ));
+            cookie()->queue($cookie);
         }
 
         Flux::toast(variant: 'success', text: __('Profile updated.'));

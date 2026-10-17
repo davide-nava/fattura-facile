@@ -45,6 +45,66 @@
     })();
 </script>
 
+<script>
+    (function () {
+        const supported = ['it', 'en', 'de', 'fr'];
+
+        function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+            return match ? decodeURIComponent(match[3]) : null;
+        }
+
+        function setCookie(name, value, days = 365) {
+            const maxAge = days * 24 * 60 * 60;
+            const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+            document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=${maxAge}; SameSite=Lax${secure}`;
+        }
+
+        window.setAppLocale = function (locale) {
+            if (!supported.includes(locale)) return;
+
+            try {
+                localStorage.setItem('locale', locale);
+            } catch (e) {}
+
+            setCookie('locale', locale);
+            document.documentElement.setAttribute('lang', locale);
+
+            window.dispatchEvent(new CustomEvent('locale-changed', {
+                detail: { locale: locale }
+            }));
+        };
+
+        try {
+            const storedLocale = localStorage.getItem('locale');
+            const cookieLocale = getCookie('locale');
+            const htmlLocale = document.documentElement.lang ? document.documentElement.lang.substring(0, 2).toLowerCase() : null;
+
+            if (cookieLocale && supported.includes(cookieLocale)) {
+                if (storedLocale !== cookieLocale) {
+                    localStorage.setItem('locale', cookieLocale);
+                }
+            } else if (storedLocale && supported.includes(storedLocale)) {
+                setCookie('locale', storedLocale);
+            } else if (htmlLocale && supported.includes(htmlLocale)) {
+                localStorage.setItem('locale', htmlLocale);
+                setCookie('locale', htmlLocale);
+            }
+        } catch (e) {}
+
+        document.addEventListener('livewire:navigated', function () {
+            try {
+                const cookieLocale = getCookie('locale');
+                const htmlLocale = document.documentElement.lang ? document.documentElement.lang.substring(0, 2).toLowerCase() : null;
+                const active = cookieLocale || htmlLocale;
+                if (active && supported.includes(active)) {
+                    localStorage.setItem('locale', active);
+                }
+            } catch (e) {}
+        });
+    })();
+</script>
+
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 @fluxAppearance
 

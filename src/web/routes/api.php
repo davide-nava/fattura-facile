@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocaleController;
 use App\Modules\CrmContacts\Http\Controllers\Api\ContactGroupApiController;
 use App\Modules\CrmContacts\Http\Controllers\Api\ContactPersonApiController;
 use App\Modules\CrmContacts\Http\Controllers\Api\CustomerStatsApiController;
@@ -25,6 +26,8 @@ Route::get('/v1/health', function () {
         'timestamp' => now()->toIso8601String(),
     ]);
 });
+
+Route::post('/v1/locale', [LocaleController::class, 'update'])->name('api.locale.update');
 
 Route::prefix('v1')->middleware(['tenant.context'])->group(function () {
     // Customers API
