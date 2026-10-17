@@ -12,6 +12,9 @@ class DarkModeThemeTest extends TestCase
 
     public function test_welcome_page_renders_with_dark_mode_support_and_theme_toggle(): void
     {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
         $response = $this->get('/');
 
         $response->assertOk();
@@ -19,6 +22,17 @@ class DarkModeThemeTest extends TestCase
         $response->assertSee('toggleTheme()', false);
         $response->assertSee('resolveTheme()', false);
         $response->assertSee('theme-changed', false);
+    }
+
+    public function test_theme_cookie_is_read_unencrypted_and_sets_dark_class(): void
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
+        $response = $this->withUnencryptedCookie('theme', 'dark')->get(route('dashboard'));
+
+        $response->assertOk();
+        $response->assertSee('<html lang="en" class="dark">', false);
     }
 
     public function test_dashboard_renders_with_dark_mode_and_theme_controls(): void

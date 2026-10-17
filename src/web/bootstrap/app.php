@@ -18,6 +18,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectGuestsTo(fn () => route('login'));
         $middleware->redirectUsersTo(fn () => route('dashboard'));
 
+        $middleware->encryptCookies(except: [
+            'theme',
+            'flux_appearance',
+        ]);
+
         $middleware->web(append: [
             InitializeTenantContext::class,
             SetLocale::class,
